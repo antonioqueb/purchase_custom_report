@@ -1,0 +1,17 @@
+<odoo>
+    <template id="report_purchaseorder_document_custom">
+        <t t-call="web.external_layout">
+            <div class="page">
+                <h2>Customized Purchase Order Report</h2>
+                <!-- Aquí agregas el contenido personalizado -->
+                <div>
+                    <strong>Order Reference:</strong> <span t-field="o.name"/>
+                </div>
+                <div>
+                    <strong>Vendor:</strong> <span t-field="o.partner_id.name"/>
+                </div>
+                <!-- Continúa con la personalización del reporte -->
+            </div>
+        </t>
+    </template>
+</odoo>
