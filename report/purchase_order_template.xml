@@ -2,68 +2,15 @@
     <template id="report_purchaseorder_document_custom">
         <t t-call="web.external_layout">
             <div class="page">
-                
-                <!-- Información del Proveedor -->
-                <div class="row mt-3">
-                    <div class="col-6">
-                        <p><strong>Proveedor:</strong> <span t-field="o.partner_id.name"/></p>
-                        <p t-field="o.partner_id.street"/>
-                        <p><t t-esc="o.partner_id.zip"/> <t t-esc="o.partner_id.city"/>, <t t-esc="o.partner_id.state_id.name"/></p>
-                        <p><strong>RFC:</strong> <span t-field="o.partner_id.vat"/></p>
-                    </div>
-                    <div class="col-6" style="text-align: right;">
-                        <p><strong>Dirección de Envío:</strong></p>
-                        <p t-field="o.partner_shipping_id.street"/>
-                        <p><t t-esc="o.partner_shipping_id.zip"/> <t t-esc="o.partner_shipping_id.city"/>, <t t-esc="o.partner_shipping_id.state_id.name"/></p>
-                        <p>Tel: <span t-field="o.partner_shipping_id.phone"/></p>
-                    </div>
+                <h2>Customized Purchase Order Report</h2>
+                <!-- Aquí agregas el contenido personalizado -->
+                <div>
+                    <strong>Order Reference:</strong> <span t-field="o.name"/>
                 </div>
-
-                <!-- Detalles de la Orden de Compra -->
-                <h2 class="mt-4">Solicitud de Presupuesto #<span t-field="o.name"/></h2>
-                <table class="table table-sm o_main_table mt-4">
-                    <thead>
-                        <tr>
-                            <th>Descripción</th>
-                            <th>Impuestos</th>
-                            <th>Fecha Req.</th>
-                            <th class="text-end">Cantidad</th>
-                            <th class="text-end">Precio Unitario</th>
-                            <th class="text-end">Monto</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <t t-foreach="o.order_line" t-as="line">
-                            <tr>
-                                <td><span t-field="line.name"/></td>
-                                <td><span t-foreach="line.taxes_id" t-as="tax"><span t-field="tax.name"/></span></td>
-                                <td class="text-center"><span t-field="line.date_planned"/></td>
-                                <td class="text-end"><span t-field="line.product_qty"/></td>
-                                <td class="text-end"><span t-field="line.price_unit"/></td>
-                                <td class="text-end"><span t-field="line.price_subtotal"/></td>
-                            </tr>
-                        </t>
-                    </tbody>
-                </table>
-
-                <!-- Totales -->
-                <div class="row">
-                    <div class="col-6">
-                        <p><strong>Subtotal:</strong></p>
-                        <p><strong>Impuestos:</strong></p>
-                        <p><strong>Total:</strong></p>
-                    </div>
-                    <div class="col-6" style="text-align: right;">
-                        <p><span t-field="o.amount_untaxed"/></p>
-                        <p><span t-field="o.amount_tax"/></p>
-                        <p><strong><span t-field="o.amount_total"/></strong></p>
-                    </div>
+                <div>
+                    <strong>Vendor:</strong> <span t-field="o.partner_id.name"/>
                 </div>
-
-                <!-- Información adicional -->
-                <p class="mt-4">Dato Fiscal: <span t-field="o.company_id.email"/></p>
-                <p>Tel: <span t-field="o.company_id.phone"/></p>
-
+                <!-- Continúa con la personalización del reporte -->
             </div>
         </t>
     </template>
