@@ -2,15 +2,17 @@
     <template id="report_purchaseorder_document_custom">
         <t t-call="web.external_layout">
             <div class="page">
-                <h2>Customized Purchase Order Report</h2>
-                <!-- Aquí agregas el contenido personalizado -->
-                <div>
-                    <strong>Order Reference:</strong>
-                </div>
-                <div>
-                    <strong>Vendor:</strong>
-                </div>
-                <!-- Continúa con la personalización del reporte -->
+                <main>
+                    <h2>Customized Purchase Order Report</h2>
+                    <!-- Aquí agregas el contenido personalizado -->
+                    <div>
+                        <strong>Order Reference:</strong> PO12345
+                    </div>
+                    <div>
+                        <strong>Vendor:</strong> ACME Corporation
+                    </div>
+                    <!-- Continúa con la personalización del reporte -->
+                </main>
             </div>
         </t>
     </template>
