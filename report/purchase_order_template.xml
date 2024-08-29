@@ -6,13 +6,16 @@
                 <!-- Encabezado y Logo -->
                 <div class="row" style="border-bottom: 2px solid #000; padding-bottom: 10px; margin-bottom: 10px;">
                     <div class="col-6">
-                        <!-- Logo estático de prueba -->
-                  
+                        <!-- Logo dinámico de la empresa seleccionada -->
+                        <img t-att-src="company.logo" style="max-width: 150px;" alt="Company Logo"/>
+                    </div>
                     <div class="col-6" style="text-align: right;">
-                        <p style="margin: 0; font-size: 14px;"><strong>Mi Empresa S.A.</strong></p>
-                        <p style="margin: 0; font-size: 12px;">Calle Falsa 123</p>
-                        <p style="margin: 0; font-size: 12px;">12345 Ciudad Ficticia, Estado, País</p>
-                        <p style="margin: 0; font-size: 12px;">Tel: 1234-5678</p>
+                        <p style="margin: 0; font-size: 14px;"><strong t-esc="company.name"/></p>
+                        <p style="margin: 0; font-size: 12px;" t-esc="company.street"/>
+                        <p style="margin: 0; font-size: 12px;">
+                            <span t-esc="company.zip"/> <span t-esc="company.city"/>, <span t-esc="company.state_id.name"/>, <span t-esc="company.country_id.name"/>
+                        </p>
+                        <p style="margin: 0; font-size: 12px;">Tel: <span t-esc="company.phone"/></p>
                     </div>
                 </div>
                 
