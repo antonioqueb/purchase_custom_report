@@ -2,41 +2,39 @@
 <odoo>
     <template id="report_purchaseorder_document_custom">
         <div class="page" style="font-family: 'DejaVu Sans', sans-serif; margin: 5px 20px;">
-            <main>
+            <main t-foreach="docs" t-as="doc">
                 <!-- Encabezado y Logo -->
                 <div class="row" style="border-bottom: 2px solid #000; padding-bottom: 10px; margin-bottom: 10px;">
                     <div class="col-6">
                         <!-- Logo dinámico de la empresa seleccionada -->
-                        <img t-att-src="doc.company_id.logo" style="max-width: 150px;" alt="Company Logo"/>
+                        <img t-att-src="company_data.logo" style="max-width: 150px;" alt="Company Logo"/>
                     </div>
                     <div class="col-6" style="text-align: right;">
-                        <p style="margin: 0; font-size: 14px;"><strong t-esc="doc.company_id.name"/></p>
-                        <p style="margin: 0; font-size: 12px;" t-esc="doc.company_id.street"/>
+                        <p style="margin: 0; font-size: 14px;"><strong t-esc="company_data.name"/></p>
+                        <p style="margin: 0; font-size: 12px;" t-esc="company_data.street"/>
                         <p style="margin: 0; font-size: 12px;">
-                            <span t-esc="doc.company_id.zip"/> <span t-esc="doc.company_id.city"/>, <span t-esc="doc.company_id.state_id.name"/>, <span t-esc="doc.company_id.country_id.name"/>
+                            <span t-esc="company_data.zip"/> <span t-esc="company_data.city"/>, <span t-esc="company_data.state_id.name"/>, <span t-esc="company_data.country_id.name"/>
                         </p>
-                        <p style="margin: 0; font-size: 12px;">Tel: <span t-esc="doc.company_id.phone"/></p>
+                        <p style="margin: 0; font-size: 12px;">Tel: <span t-esc="company_data.phone"/></p>
                     </div>
                 </div>
                 
                 <!-- Información del Proveedor -->
                 <div class="row" style="margin-bottom: 10px;">
                     <div class="col-6">
-                        <p style="margin: 0; font-size: 14px;"><strong>Proveedor:</strong> Proveedor de Prueba S.A.</p>
-                        <p style="margin: 0; font-size: 12px;">Calle del Proveedor 456</p>
-                        <p style="margin: 0; font-size: 12px;">67890 Ciudad Proveedor, Estado, País</p>
-                        <p style="margin: 0; font-size: 12px;"><strong>RFC:</strong> RFC123456789</p>
+                        <p style="margin: 0; font-size: 14px;"><strong>Proveedor:</strong> <span t-esc="doc.partner_id.name"/></p>
+                        <p style="margin: 0; font-size: 12px;" t-esc="doc.partner_id.street"/>
+                        <p style="margin: 0; font-size: 12px;">RFC: <span t-esc="doc.partner_id.vat"/></p>
                     </div>
                     <div class="col-6" style="text-align: right;">
                         <p style="margin: 0; font-size: 14px;"><strong>Dirección de Envío:</strong></p>
-                        <p style="margin: 0; font-size: 12px;">Calle de Envío 789</p>
-                        <p style="margin: 0; font-size: 12px;">54321 Ciudad Envío, Estado, País</p>
-                        <p style="margin: 0; font-size: 12px;">Tel: 9876-5432</p>
+                        <p style="margin: 0; font-size: 12px;" t-esc="doc.partner_shipping_id.street"/>
+                        <p style="margin: 0; font-size: 12px;">Tel: <span t-esc="doc.partner_shipping_id.phone"/></p>
                     </div>
                 </div>
 
                 <!-- Detalles de la Orden de Compra -->
-                <h2 style="font-size: 16px; margin-bottom: 10px;">Solicitud de Presupuesto #PO0001</h2>
+                <h2 style="font-size: 16px; margin-bottom: 10px;">Solicitud de Presupuesto #<span t-esc="doc.name"/></h2>
                 <table class="table table-sm o_main_table" style="width: 100%; border-collapse: collapse;">
                     <thead>
                         <tr style="background-color: #f0f0f0;">
@@ -49,21 +47,13 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td style="padding: 8px; border: 1px solid #ddd;">Producto de Prueba 1</td>
-                            <td style="padding: 8px; border: 1px solid #ddd;">IVA 16%</td>
-                            <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">01/09/2024</td>
-                            <td style="padding: 8px; border: 1px solid #ddd; text-align: right;">10</td>
-                            <td style="padding: 8px; border: 1px solid #ddd; text-align: right;">$100.00</td>
-                            <td style="padding: 8px; border: 1px solid #ddd; text-align: right;">$1,000.00</td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 8px; border: 1px solid #ddd;">Producto de Prueba 2</td>
-                            <td style="padding: 8px; border: 1px solid #ddd;">IVA 16%</td>
-                            <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">01/09/2024</td>
-                            <td style="padding: 8px; border: 1px solid #ddd; text-align: right;">5</td>
-                            <td style="padding: 8px; border: 1px solid #ddd; text-align: right;">$200.00</td>
-                            <td style="padding: 8px; border: 1px solid #ddd; text-align: right;">$1,000.00</td>
+                        <tr t-foreach="doc.order_line" t-as="line">
+                            <td style="padding: 8px; border: 1px solid #ddd;" t-esc="line.name"/>
+                            <td style="padding: 8px; border: 1px solid #ddd;" t-esc="line.taxes_id.name"/>
+                            <td style="padding: 8px; border: 1px solid #ddd; text-align: center;" t-esc="line.date_planned"/>
+                            <td style="padding: 8px; border: 1px solid #ddd; text-align: right;" t-esc="line.product_qty"/>
+                            <td style="padding: 8px; border: 1px solid #ddd; text-align: right;" t-esc="line.price_unit"/>
+                            <td style="padding: 8px; border: 1px solid #ddd; text-align: right;" t-esc="line.price_total"/>
                         </tr>
                     </tbody>
                 </table>
@@ -71,15 +61,15 @@
                 <!-- Totales -->
                 <div class="row" style="margin-top: 10px;">
                     <div class="col-6">
-                        <p style="margin: 0; font-size: 14px;"><strong>Subtotal:</strong> $2,000.00</p>
-                        <p style="margin: 0; font-size: 14px;"><strong>Impuestos:</strong> $320.00</p>
-                        <p style="margin: 0; font-size: 14px;"><strong>Total:</strong> $2,320.00</p>
+                        <p style="margin: 0; font-size: 14px;"><strong>Subtotal:</strong> <span t-esc="doc.amount_untaxed"/></p>
+                        <p style="margin: 0; font-size: 14px;"><strong>Impuestos:</strong> <span t-esc="doc.amount_tax"/></p>
+                        <p style="margin: 0; font-size: 14px;"><strong>Total:</strong> <span t-esc="doc.amount_total"/></p>
                     </div>
                 </div>
 
                 <!-- Información adicional -->
-                <p style="margin-top: 20px; font-size: 12px;">Dato Fiscal: info@miempresa.com</p>
-                <p style="font-size: 12px;">Tel: 1234-5678</p>
+                <p style="margin-top: 20px; font-size: 12px;">Dato Fiscal: <span t-esc="company_data.email"/></p>
+                <p style="font-size: 12px;">Tel: <span t-esc="company_data.phone"/></p>
             </main>
         </div>
     </template>
