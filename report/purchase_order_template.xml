@@ -5,10 +5,10 @@
                 <h2>Customized Purchase Order Report</h2>
                 <!-- Aquí agregas el contenido personalizado -->
                 <div>
-                    <strong>Order Reference:</strong> <span t-field="o.name"/>
+                    <strong>Order Reference:</strong>
                 </div>
                 <div>
-                    <strong>Vendor:</strong> <span t-field="o.partner_id.name"/>
+                    <strong>Vendor:</strong>
                 </div>
                 <!-- Continúa con la personalización del reporte -->
             </div>
