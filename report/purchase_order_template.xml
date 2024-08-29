@@ -3,15 +3,81 @@
         <t t-call="web.external_layout">
             <div class="page">
                 <main>
-                    <h2>Customized Purchase Order Report</h2>
-                    <!-- Aquí agregas el contenido personalizado -->
-                    <div>
-                        <strong>Order Reference:</strong> PO12345
+                    <!-- Logo y Encabezado Dinámico -->
+                    <div class="row">
+                        <div class="col-6">
+                            <!-- Logo estático de prueba -->
+                            <img src="/web/static/src/img/logo.png" style="max-width: 200px;" alt="Logo"/>
+                        </div>
+                        <div class="col-6" style="text-align: right;">
+                            <p><strong>Mi Empresa S.A.</strong></p>
+                            <p>Calle Falsa 123</p>
+                            <p>12345 Ciudad Ficticia, Estado, País</p>
+                            <p>Tel: 1234-5678</p>
+                        </div>
                     </div>
-                    <div>
-                        <strong>Vendor:</strong> ACME Corporation
+                    
+                    <!-- Información del Proveedor -->
+                    <div class="row mt-3">
+                        <div class="col-6">
+                            <p><strong>Proveedor:</strong> Proveedor de Prueba S.A.</p>
+                            <p>Calle del Proveedor 456</p>
+                            <p>67890 Ciudad Proveedor, Estado, País</p>
+                            <p><strong>RFC:</strong> RFC123456789</p>
+                        </div>
+                        <div class="col-6" style="text-align: right;">
+                            <p><strong>Dirección de Envío:</strong></p>
+                            <p>Calle de Envío 789</p>
+                            <p>54321 Ciudad Envío, Estado, País</p>
+                            <p>Tel: 9876-5432</p>
+                        </div>
                     </div>
-                    <!-- Continúa con la personalización del reporte -->
+
+                    <!-- Detalles de la Orden de Compra -->
+                    <h2 class="mt-4">Solicitud de Presupuesto #PO0001</h2>
+                    <table class="table table-sm o_main_table mt-4">
+                        <thead>
+                            <tr>
+                                <th>Descripción</th>
+                                <th>Impuestos</th>
+                                <th>Fecha Req.</th>
+                                <th class="text-end">Cantidad</th>
+                                <th class="text-end">Precio Unitario</th>
+                                <th class="text-end">Monto</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Producto de Prueba 1</td>
+                                <td>IVA 16%</td>
+                                <td class="text-center">01/09/2024</td>
+                                <td class="text-end">10</td>
+                                <td class="text-end">$100.00</td>
+                                <td class="text-end">$1,000.00</td>
+                            </tr>
+                            <tr>
+                                <td>Producto de Prueba 2</td>
+                                <td>IVA 16%</td>
+                                <td class="text-center">01/09/2024</td>
+                                <td class="text-end">5</td>
+                                <td class="text-end">$200.00</td>
+                                <td class="text-end">$1,000.00</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <!-- Totales -->
+                    <div class="row">
+                        <div class="col-6">
+                            <p><strong>Subtotal:</strong> $2,000.00</p>
+                            <p><strong>Impuestos:</strong> $320.00</p>
+                            <p><strong>Total:</strong> $2,320.00</p>
+                        </div>
+                    </div>
+
+                    <!-- Información adicional -->
+                    <p class="mt-4">Dato Fiscal: info@miempresa.com</p>
+                    <p>Tel: 1234-5678</p>
                 </main>
             </div>
         </t>
