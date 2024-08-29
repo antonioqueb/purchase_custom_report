@@ -14,5 +14,5 @@ class PurchaseOrderReport(models.Model):
             'doc_ids': docids,
             'doc_model': 'purchase.order',
             'docs': docs,
-            'company_data': company_data,  # Pasamos el objeto 'company' al contexto con un nombre diferente
+            'company_data': company_data,
         }
