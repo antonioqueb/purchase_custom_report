@@ -7,7 +7,7 @@
                 <div class="row">
                     <div class="col-6">
                         <!-- Obtención dinámica del logo de la empresa -->
-                        <img t-att-src="o.company_id.logo" style="max-width: 200px;" alt="Logo"/>
+                        <img t-att-src="image_url(o.company_id, 'logo')" style="max-width: 200px;" alt="Logo"/>
                     </div>
                     <div class="col-6" style="text-align: right;">
                         <p><strong t-field="o.company_id.name"/></p>
