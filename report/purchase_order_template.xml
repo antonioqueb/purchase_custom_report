@@ -7,7 +7,7 @@
                 <div class="row" style="border-bottom: 2px solid #000; padding-bottom: 10px; margin-bottom: 10px;">
                     <div class="col-6">
                         <!-- Logo estático de prueba -->
-                    <img t-att-src="'/purchase_custom_report/static/src/img/cabeza.jpg'" style="max-width: 150px;" alt="Company Logo"/>
+                     <img t-att-src="'/purchase_custom_report/static/src/img/cabeza.jpg'" style="max-width: 150px;" alt="Company Logo"/>
                     <div class="col-6" style="text-align: right;">
                         <p style="margin: 0; font-size: 14px;"><strong>Mi Empresa S.A.</strong></p>
                         <p style="margin: 0; font-size: 12px;">Calle Falsa 123</p>
