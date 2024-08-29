@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <template id="report_purchaseorder_document_custom">
-        <div class="page" style="font-family: 'DejaVu Sans', sans-serif; margin: 20px;">
+        <div class="page" style="font-family: 'DejaVu Sans', sans-serif; margin: 10px 20px;">
             <main>
                 <!-- Encabezado y Logo -->
-                <div class="row" style="border-bottom: 2px solid #000; padding-bottom: 10px; margin-bottom: 20px;">
+                <div class="row" style="border-bottom: 2px solid #000; padding-bottom: 10px; margin-bottom: 10px;">
                     <div class="col-6">
                         <!-- Logo estático de prueba -->
                         <img src="/web/static/src/img/logo.png" style="max-width: 150px;" alt="Logo"/>
@@ -18,7 +18,7 @@
                 </div>
                 
                 <!-- Información del Proveedor -->
-                <div class="row" style="margin-bottom: 20px;">
+                <div class="row" style="margin-bottom: 10px;">
                     <div class="col-6">
                         <p style="margin: 0; font-size: 14px;"><strong>Proveedor:</strong> Proveedor de Prueba S.A.</p>
                         <p style="margin: 0; font-size: 12px;">Calle del Proveedor 456</p>
@@ -34,7 +34,7 @@
                 </div>
 
                 <!-- Detalles de la Orden de Compra -->
-                <h2 style="font-size: 16px; margin-bottom: 20px;">Solicitud de Presupuesto #PO0001</h2>
+                <h2 style="font-size: 16px; margin-bottom: 10px;">Solicitud de Presupuesto #PO0001</h2>
                 <table class="table table-sm o_main_table" style="width: 100%; border-collapse: collapse;">
                     <thead>
                         <tr style="background-color: #f0f0f0;">
@@ -67,7 +67,7 @@
                 </table>
 
                 <!-- Totales -->
-                <div class="row" style="margin-top: 20px;">
+                <div class="row" style="margin-top: 10px;">
                     <div class="col-6">
                         <p style="margin: 0; font-size: 14px;"><strong>Subtotal:</strong> $2,000.00</p>
                         <p style="margin: 0; font-size: 14px;"><strong>Impuestos:</strong> $320.00</p>
@@ -76,7 +76,7 @@
                 </div>
 
                 <!-- Información adicional -->
-                <p style="margin-top: 40px; font-size: 12px;">Dato Fiscal: info@miempresa.com</p>
+                <p style="margin-top: 20px; font-size: 12px;">Dato Fiscal: info@miempresa.com</p>
                 <p style="font-size: 12px;">Tel: 1234-5678</p>
             </main>
         </div>
