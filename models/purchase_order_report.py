@@ -3,6 +3,7 @@ from odoo import models, api
 class PurchaseOrderReport(models.AbstractModel):
     _name = 'report.purchase_custom_report.report_purchaseorder_document_custom'
     _description = 'Custom Purchase Order Report'
+    _table = 'report_purchase_custom_report_doc'  # Nombre de tabla más corto
 
     def action_print_purchase_order_custom(self):
         return self.env.ref('purchase_custom_report.action_report_purchase_order_custom').report_action(self)
