@@ -3,20 +3,6 @@
         <t t-call="web.external_layout">
             <div class="page">
                 
-                <!-- Logo y Encabezado Dinámico -->
-                <div class="row">
-                    <div class="col-6">
-                        <!-- Obtención dinámica del logo de la empresa -->
-                       <img t-att-src="'data:image/png;base64,%s' % (o.company_id.logo)" style="max-width: 200px;" alt="Logo"/>
-                    </div>
-                    <div class="col-6" style="text-align: right;">
-                        <p><strong t-field="o.company_id.name"/></p>
-                        <p t-field="o.company_id.street"/>
-                        <p><t t-esc="o.company_id.zip"/> <t t-esc="o.company_id.city"/>, <t t-esc="o.company_id.state_id.name"/> <t t-esc="o.company_id.country_id.name"/></p>
-                        <p>Tel: <span t-field="o.company_id.phone"/></p>
-                    </div>
-                </div>
-                
                 <!-- Información del Proveedor -->
                 <div class="row mt-3">
                     <div class="col-6">
