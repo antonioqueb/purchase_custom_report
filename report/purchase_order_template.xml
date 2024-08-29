@@ -1,84 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <template id="report_purchaseorder_document_custom">
-            <div class="page">
-                <main>
-                    <!-- Logo y Encabezado Dinámico -->
-                    <div class="row">
-                        <div class="col-6">
-                            <!-- Logo estático de prueba -->
-                            <img src="/web/static/src/img/logo.png" style="max-width: 200px;" alt="Logo"/>
-                        </div>
-                        <div class="col-6" style="text-align: right;">
-                            <p><strong>Mi Empresa S.A.</strong></p>
-                            <p>Calle Falsa 123</p>
-                            <p>12345 Ciudad Ficticia, Estado, País</p>
-                            <p>Tel: 1234-5678</p>
-                        </div>
+        <div class="page" style="font-family: 'DejaVu Sans', sans-serif; margin: 20px;">
+            <main>
+                <!-- Encabezado y Logo -->
+                <div class="row" style="border-bottom: 2px solid #000; padding-bottom: 10px; margin-bottom: 20px;">
+                    <div class="col-6">
+                        <!-- Logo estático de prueba -->
+                        <img src="/web/static/src/img/logo.png" style="max-width: 150px;" alt="Logo"/>
                     </div>
-                    
-                    <!-- Información del Proveedor -->
-                    <div class="row mt-3">
-                        <div class="col-6">
-                            <p><strong>Proveedor:</strong> Proveedor de Prueba S.A.</p>
-                            <p>Calle del Proveedor 456</p>
-                            <p>67890 Ciudad Proveedor, Estado, País</p>
-                            <p><strong>RFC:</strong> RFC123456789</p>
-                        </div>
-                        <div class="col-6" style="text-align: right;">
-                            <p><strong>Dirección de Envío:</strong></p>
-                            <p>Calle de Envío 789</p>
-                            <p>54321 Ciudad Envío, Estado, País</p>
-                            <p>Tel: 9876-5432</p>
-                        </div>
+                    <div class="col-6" style="text-align: right;">
+                        <p style="margin: 0; font-size: 14px;"><strong>Mi Empresa S.A.</strong></p>
+                        <p style="margin: 0; font-size: 12px;">Calle Falsa 123</p>
+                        <p style="margin: 0; font-size: 12px;">12345 Ciudad Ficticia, Estado, País</p>
+                        <p style="margin: 0; font-size: 12px;">Tel: 1234-5678</p>
                     </div>
-
-                    <!-- Detalles de la Orden de Compra -->
-                    <h2 class="mt-4">Solicitud de Presupuesto #PO0001</h2>
-                    <table class="table table-sm o_main_table mt-4">
-                        <thead>
-                            <tr>
-                                <th>Descripción</th>
-                                <th>Impuestos</th>
-                                <th>Fecha Req.</th>
-                                <th class="text-end">Cantidad</th>
-                                <th class="text-end">Precio Unitario</th>
-                                <th class="text-end">Monto</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Producto de Prueba 1</td>
-                                <td>IVA 16%</td>
-                                <td class="text-center">01/09/2024</td>
-                                <td class="text-end">10</td>
-                                <td class="text-end">$100.00</td>
-                                <td class="text-end">$1,000.00</td>
-                            </tr>
-                            <tr>
-                                <td>Producto de Prueba 2</td>
-                                <td>IVA 16%</td>
-                                <td class="text-center">01/09/2024</td>
-                                <td class="text-end">5</td>
-                                <td class="text-end">$200.00</td>
-                                <td class="text-end">$1,000.00</td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    <!-- Totales -->
-                    <div class="row">
-                        <div class="col-6">
-                            <p><strong>Subtotal:</strong> $2,000.00</p>
-                            <p><strong>Impuestos:</strong> $320.00</p>
-                            <p><strong>Total:</strong> $2,320.00</p>
-                        </div>
+                </div>
+                
+                <!-- Información del Proveedor -->
+                <div class="row" style="margin-bottom: 20px;">
+                    <div class="col-6">
+                        <p style="margin: 0; font-size: 14px;"><strong>Proveedor:</strong> Proveedor de Prueba S.A.</p>
+                        <p style="margin: 0; font-size: 12px;">Calle del Proveedor 456</p>
+                        <p style="margin: 0; font-size: 12px;">67890 Ciudad Proveedor, Estado, País</p>
+                        <p style="margin: 0; font-size: 12px;"><strong>RFC:</strong> RFC123456789</p>
                     </div>
+                    <div class="col-6" style="text-align: right;">
+                        <p style="margin: 0; font-size: 14px;"><strong>Dirección de Envío:</strong></p>
+                        <p style="margin: 0; font-size: 12px;">Calle de Envío 789</p>
+                        <p style="margin: 0; font-size: 12px;">54321 Ciudad Envío, Estado, País</p>
+                        <p style="margin: 0; font-size: 12px;">Tel: 9876-5432</p>
+                    </div>
+                </div>
 
-                    <!-- Información adicional -->
-                    <p class="mt-4">Dato Fiscal: info@miempresa.com</p>
-                    <p>Tel: 1234-5678</p>
-                </main>
-            </div>
+                <!-- Detalles de la Orden de Compra -->
+                <h2 style="font-size: 16px; margin-bottom: 20px;">Solicitud de Presupuesto #PO0001</h2>
+                <table class="table table-sm o_main_table" style="width: 100%; border-collapse: collapse;">
+                    <thead>
+                        <tr style="background-color: #f0f0f0;">
+                            <th style="padding: 8px; border: 1px solid #ddd; text-align: left;">Descripción</th>
+                            <th style="padding: 8px; border: 1px solid #ddd; text-align: left;">Impuestos</th>
+                            <th style="padding: 8px; border: 1px solid #ddd; text-align: center;">Fecha Req.</th>
+                            <th style="padding: 8px; border: 1px solid #ddd; text-align: right;">Cantidad</th>
+                            <th style="padding: 8px; border: 1px solid #ddd; text-align: right;">Precio Unitario</th>
+                            <th style="padding: 8px; border: 1px solid #ddd; text-align: right;">Monto</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding: 8px; border: 1px solid #ddd;">Producto de Prueba 1</td>
+                            <td style="padding: 8px; border: 1px solid #ddd;">IVA 16%</td>
+                            <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">01/09/2024</td>
+                            <td style="padding: 8px; border: 1px solid #ddd; text-align: right;">10</td>
+                            <td style="padding: 8px; border: 1px solid #ddd; text-align: right;">$100.00</td>
+                            <td style="padding: 8px; border: 1px solid #ddd; text-align: right;">$1,000.00</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px; border: 1px solid #ddd;">Producto de Prueba 2</td>
+                            <td style="padding: 8px; border: 1px solid #ddd;">IVA 16%</td>
+                            <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">01/09/2024</td>
+                            <td style="padding: 8px; border: 1px solid #ddd; text-align: right;">5</td>
+                            <td style="padding: 8px; border: 1px solid #ddd; text-align: right;">$200.00</td>
+                            <td style="padding: 8px; border: 1px solid #ddd; text-align: right;">$1,000.00</td>
+                        </tr>
+                    </tbody>
+                </table>
 
+                <!-- Totales -->
+                <div class="row" style="margin-top: 20px;">
+                    <div class="col-6">
+                        <p style="margin: 0; font-size: 14px;"><strong>Subtotal:</strong> $2,000.00</p>
+                        <p style="margin: 0; font-size: 14px;"><strong>Impuestos:</strong> $320.00</p>
+                        <p style="margin: 0; font-size: 14px;"><strong>Total:</strong> $2,320.00</p>
+                    </div>
+                </div>
+
+                <!-- Información adicional -->
+                <p style="margin-top: 40px; font-size: 12px;">Dato Fiscal: info@miempresa.com</p>
+                <p style="font-size: 12px;">Tel: 1234-5678</p>
+            </main>
+        </div>
     </template>
 </odoo>
