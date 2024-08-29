@@ -1,6 +1,5 @@
 <odoo>
     <template id="report_purchaseorder_document_custom">
-        <t t-call="web.external_layout">
             <div class="page">
                 <main>
                     <!-- Logo y Encabezado Dinámico -->
@@ -80,6 +79,6 @@
                     <p>Tel: 1234-5678</p>
                 </main>
             </div>
-        </t>
+
     </template>
 </odoo>
