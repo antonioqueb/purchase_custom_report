@@ -1,86 +1,88 @@
 <odoo>
     <template id="report_purchaseorder_document_custom">
         <t t-call="web.html_container">
-            <t t-set="doc" t-value="doc.with_context({})"/>
-            <t t-call="web.external_layout">
-                <div class="page">
-                    <!-- Tabla para dividir en dos columnas -->
-                    <table style="width: 100%; margin-bottom: 20px;">
-                        <tr>
-                            <!-- Información del Proveedor -->
-                            <td style="width: 50%; vertical-align: top;">
-                                <p style="margin: 0; font-size: 14px; line-height: 1.6;">
-                                    <strong>Proveedor:</strong><br />
-                                    Industrias Químicas Orion S.A. de C.V.
-                                </p>
-                                <p style="margin: 5px 0; font-size: 12px; color: #555; line-height: 1.4;">
-                                    Avenida de las Estrellas No. 123<br />
-                                    Parque Industrial Norte, 54030 Tlalnepantla, Estado de México<br />
-                                    <strong>RFC:</strong> IQO990123H12
-                                </p>
-                            </td>
+            <!-- Iterar sobre los documentos (orders) -->
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <!-- Tabla para dividir en dos columnas -->
+                        <table style="width: 100%; margin-bottom: 20px;">
+                            <tr>
+                                <!-- Información del Proveedor -->
+                                <td style="width: 50%; vertical-align: top;">
+                                    <p style="margin: 0; font-size: 14px; line-height: 1.6;">
+                                        <strong>Proveedor:</strong><br />
+                                        <span t-esc="doc.partner_id.name"/>
+                                    </p>
+                                    <p style="margin: 5px 0; font-size: 12px; color: #555; line-height: 1.4;">
+                                        <span t-esc="doc.partner_id.street"/><br />
+                                        <span t-esc="doc.partner_id.city"/>, <span t-esc="doc.partner_id.state_id.name"/><br />
+                                        <strong>RFC:</strong> <span t-esc="doc.partner_id.vat"/>
+                                    </p>
+                                </td>
 
-                            <!-- Dirección de Entrega y Fechas -->
-                            <td style="width: 50%; vertical-align: top; text-align: right;">
-                                <p style="margin: 0; font-size: 14px; line-height: 1.6;">
-                                    <strong>Dirección de Entrega:</strong><br />
-                                    Calle del Trabajo No. 456, Col. Industrial<br />
-                                    03100 Ciudad de México, CDMX
-                                </p>
-                                <p style="margin: 0; font-size: 12px; color: #555; text-align: right; line-height: 1.4;">
-                                    <strong>Fecha del pedido:</strong> 15/08/2024 11:30:00<br />
-                                    <strong>Fecha requerida:</strong> 20/08/2024 08:00:00<br />
-                                    <strong>Solicitud de Presupuesto:</strong> #OR-458712
-                                </p>
-                            </td>
-                        </tr>
-                    </table>
+                                <!-- Dirección de Entrega y Fechas -->
+                                <td style="width: 50%; vertical-align: top; text-align: right;">
+                                    <p style="margin: 0; font-size: 14px; line-height: 1.6;">
+                                        <strong>Dirección de Entrega:</strong><br />
+                                        <span t-esc="doc.partner_shipping_id.street"/><br />
+                                        <span t-esc="doc.partner_shipping_id.city"/>, <span t-esc="doc.partner_shipping_id.state_id.name"/><br />
+                                    </p>
+                                    <p style="margin: 0; font-size: 12px; color: #555; text-align: right; line-height: 1.4;">
+                                        <strong>Fecha del pedido:</strong> <span t-esc="doc.date_order"/><br />
+                                        <strong>Fecha requerida:</strong> <span t-esc="doc.date_planned"/><br />
+                                        <strong>Solicitud de Presupuesto:</strong> <span t-esc="doc.name"/>
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
 
-                    <!-- Solicitud de Presupuesto -->
-                    <div class="request-header" style="padding: 10px; border-bottom: 1px solid #ddd; margin-bottom: 20px; font-size: 14px;">
-                        <p><strong>Requisición de Presupuesto #OC0001</strong></p>
-                        <p>Representante del Proveedor: Juan Pérez</p>
-                        <p>Fecha del pedido: 15/08/2024 11:30:00</p>
+                        <!-- Solicitud de Presupuesto -->
+                        <div class="request-header" style="padding: 10px; border-bottom: 1px solid #ddd; margin-bottom: 20px; font-size: 14px;">
+                            <p><strong>Requisición de Presupuesto #<span t-esc="doc.name"/></strong></p>
+                            <p>Representante del Proveedor: <span t-esc="doc.user_id.name"/></p>
+                            <p>Fecha del pedido: <span t-esc="doc.date_order"/></p>
+                        </div>
+
+                        <!-- Detalles de la Orden de Compra -->
+                        <table style="width: 100%; border-collapse: collapse; margin-top: 10px;">
+                            <thead>
+                                <tr style="background-color: #f0f0f0;">
+                                    <th style="padding: 8px; border: 1px solid #ddd; text-align: left;">Descripción</th>
+                                    <th style="padding: 8px; border: 1px solid #ddd; text-align: right;">Cant</th>
+                                    <th style="padding: 8px; border: 1px solid #ddd; text-align: right;">Precio Unidad</th>
+                                    <th style="padding: 8px; border: 1px solid #ddd; text-align: right;">Monto</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr t-foreach="doc.order_line" t-as="line">
+                                    <td style="padding: 8px; border: 1px solid #ddd;" t-esc="line.name"/>
+                                    <td style="padding: 8px; border: 1px solid #ddd; text-align: right;" t-esc="line.product_qty"/>
+                                    <td style="padding: 8px; border: 1px solid #ddd; text-align: right;" t-esc="line.price_unit"/>
+                                    <td style="padding: 8px; border: 1px solid #ddd; text-align: right;" t-esc="line.price_total"/>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <!-- Totales -->
+                        <table class="subtotal-section" style="width: 50%; border-collapse: collapse; margin-top: 20px; margin-left: auto; font-size: 14px;">
+                            <tbody>
+                                <tr>
+                                    <td style="padding: 8px; border: 1px solid #ddd;"><strong>Subtotal:</strong></td>
+                                    <td class="text-right" style="padding: 8px; border: 1px solid #ddd;" t-esc="doc.amount_untaxed"/>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 8px; border: 1px solid #ddd;"><strong>Impuestos (16%):</strong></td>
+                                    <td class="text-right" style="padding: 8px; border: 1px solid #ddd;" t-esc="doc.amount_tax"/>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 8px; border: 1px solid #ddd;"><strong>Total:</strong></td>
+                                    <td class="text-right" style="padding: 8px; border: 1px solid #ddd;"><strong t-esc="doc.amount_total"/></td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
-
-                    <!-- Detalles de la Orden de Compra -->
-                    <table style="width: 100%; border-collapse: collapse; margin-top: 10px;">
-                        <thead>
-                            <tr style="background-color: #f0f0f0;">
-                                <th style="padding: 8px; border: 1px solid #ddd; text-align: left;">Descripción</th>
-                                <th style="padding: 8px; border: 1px solid #ddd; text-align: right;">Cant</th>
-                                <th style="padding: 8px; border: 1px solid #ddd; text-align: right;">Precio Unidad</th>
-                                <th style="padding: 8px; border: 1px solid #ddd; text-align: right;">Monto</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td style="padding: 8px; border: 1px solid #ddd;">BANDA DE TIEMPO DA630H100</td>
-                                <td style="padding: 8px; border: 1px solid #ddd; text-align: right;">2.00 UNIDAD</td>
-                                <td style="padding: 8px; border: 1px solid #ddd; text-align: right;">$1,764.00</td>
-                                <td style="padding: 8px; border: 1px solid #ddd; text-align: right;">$3,528.00</td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    <!-- Totales -->
-                    <table class="subtotal-section" style="width: 50%; border-collapse: collapse; margin-top: 20px; margin-left: auto; font-size: 14px;">
-                        <tbody>
-                            <tr>
-                                <td style="padding: 8px; border: 1px solid #ddd;"><strong>Subtotal:</strong></td>
-                                <td class="text-right" style="padding: 8px; border: 1px solid #ddd;">$3,528.00</td>
-                            </tr>
-                            <tr>
-                                <td style="padding: 8px; border: 1px solid #ddd;"><strong>Impuestos (16%):</strong></td>
-                                <td class="text-right" style="padding: 8px; border: 1px solid #ddd;">$564.44</td>
-                            </tr>
-                            <tr>
-                                <td style="padding: 8px; border: 1px solid #ddd;"><strong>Total:</strong></td>
-                                <td class="text-right" style="padding: 8px; border: 1px solid #ddd;"><strong>$4,092.44</strong></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+                </t>
             </t>
         </t>
     </template>
