@@ -1,0 +1,71 @@
+<report>
+    <page style="font-family: 'DejaVu Sans', sans-serif; margin: 5px 20px;">
+        <!-- Encabezado y Logo -->
+        <header style="border-bottom: 2px solid #000; padding-bottom: 10px; margin-bottom: 10px;">
+            <company>
+                <logo>logo_url</logo>
+                <name>Nombre de la Empresa</name>
+                <address>Calle de la Empresa</address>
+                <city>Ciudad</city>
+                <state>Estado</state>
+                <country>País</country>
+                <phone>Teléfono de la Empresa</phone>
+            </company>
+        </header>
+
+        <!-- Información del Proveedor -->
+        <supplier>
+            <name>Nombre del Proveedor</name>
+            <address>Calle del Proveedor</address>
+            <rfc>RFC del Proveedor</rfc>
+        </supplier>
+
+        <!-- Detalles de la Orden de Compra -->
+        <purchase_order>
+            <title>Solicitud de Presupuesto #Orden123</title>
+            <table>
+                <thead>
+                    <row>
+                        <column>Descripción</column>
+                        <column>Impuestos</column>
+                        <column>Fecha Req.</column>
+                        <column>Cantidad</column>
+                        <column>Precio Unitario</column>
+                        <column>Monto</column>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <description>Producto 1</description>
+                        <taxes>Impuesto 1</taxes>
+                        <date>01/09/2024</date>
+                        <quantity>10</quantity>
+                        <unit_price>$100.00</unit_price>
+                        <amount>$1,000.00</amount>
+                    </row>
+                    <row>
+                        <description>Producto 2</description>
+                        <taxes>Impuesto 2</taxes>
+                        <date>01/09/2024</date>
+                        <quantity>5</quantity>
+                        <unit_price>$200.00</unit_price>
+                        <amount>$1,000.00</amount>
+                    </row>
+                </tbody>
+            </table>
+        </purchase_order>
+
+        <!-- Totales -->
+        <totals>
+            <subtotal>$2,000.00</subtotal>
+            <taxes>$320.00</taxes>
+            <total>$2,320.00</total>
+        </totals>
+
+        <!-- Información adicional -->
+        <additional_info>
+            <fiscal_data>Dato Fiscal: proveedor@example.com</fiscal_data>
+            <phone>Tel: 123-456-7890</phone>
+        </additional_info>
+    </page>
+</report>
