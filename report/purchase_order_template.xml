@@ -28,7 +28,7 @@
                                         <!-- Puedes agregar más información aquí o dejarlo vacío si solo necesitas una columna -->
                                         <p style="margin: 0; font-size: 14px; line-height: 1.6;">
                                             <strong>Otra Información:</strong><br />
-                                            <span t-esc="doc.partner_id.other_info"/>
+                                            <!-- <span t-esc="doc.partner_id.other_info"/> -->
                                         </p>
                                     </div>
                                 </div>
