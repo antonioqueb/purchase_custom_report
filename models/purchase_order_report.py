@@ -13,10 +13,8 @@ class PurchaseOrderReport(models.AbstractModel):
     @api.model
     def _get_report_values(self, docids, data=None):
         docs = self.env['purchase.order'].browse(docids)
-        company_data = self.env.user.company_id
         return {
             'doc_ids': docids,
             'doc_model': 'purchase.order',
             'docs': docs,
-            'company_data': company_data,
         }
