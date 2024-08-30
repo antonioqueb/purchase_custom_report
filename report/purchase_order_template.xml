@@ -33,14 +33,14 @@
                                     </div>
                                 </div>
                             </td>
-                                <!-- Fechas del Pedido -->
+                                <!-- Fechas del Pedido
                                 <td style="width: 50%; vertical-align: top; text-align: right;">
                                     <p style="margin: 0; font-size: 14px; line-height: 1.6;">
                                         <strong>Fecha del pedido:</strong> <span t-esc="doc.date_order"/><br />
                                         <strong>Fecha requerida:</strong> <span t-esc="doc.date_planned"/><br />
                                         <strong>Solicitud de Presupuesto:</strong> <span t-esc="doc.name"/>
                                     </p>
-                                </td>
+                                </td> -->
                             </tr>
                         </table>
 
