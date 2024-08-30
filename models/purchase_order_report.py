@@ -1,12 +1,14 @@
 from odoo import models, api
 
-class PurchaseOrderReport(models.AbstractModel):
-    _name = 'report.purchase_order_custom'  # Nombre del modelo más corto
-    _description = 'Custom Purchase Order Report'
-    _table = 'report_po_cust'  # Nombre de tabla más corto
+class PurchaseOrder(models.Model):
+    _inherit = 'purchase.order'
 
     def action_print_purchase_order_custom(self):
         return self.env.ref('purchase_custom_report.action_report_purchase_order_custom').report_action(self)
+
+class PurchaseOrderReport(models.AbstractModel):
+    _name = 'report.purchase_order_custom'
+    _description = 'Custom Purchase Order Report'
 
     @api.model
     def _get_report_values(self, docids, data=None):
