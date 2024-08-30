@@ -21,19 +21,9 @@
                                     </p>
                                 </td>
 
-                                <!-- Dirección de Entrega y Fechas -->
+                                <!-- Fechas del Pedido -->
                                 <td style="width: 50%; vertical-align: top; text-align: right;">
                                     <p style="margin: 0; font-size: 14px; line-height: 1.6;">
-                                        <strong>Dirección de Entrega:</strong><br />
-                                        <span t-if="doc.partner_shipping_id">
-                                            <span t-esc="doc.partner_shipping_id.street"/><br />
-                                            <span t-esc="doc.partner_shipping_id.city"/>, <span t-esc="doc.partner_shipping_id.state_id.name"/><br />
-                                        </span>
-                                        <span t-if="not doc.partner_shipping_id">
-                                            <span>No especificada</span><br />
-                                        </span>
-                                    </p>
-                                    <p style="margin: 0; font-size: 12px; color: #555; text-align: right; line-height: 1.4;">
                                         <strong>Fecha del pedido:</strong> <span t-esc="doc.date_order"/><br />
                                         <strong>Fecha requerida:</strong> <span t-esc="doc.date_planned"/><br />
                                         <strong>Solicitud de Presupuesto:</strong> <span t-esc="doc.name"/>
