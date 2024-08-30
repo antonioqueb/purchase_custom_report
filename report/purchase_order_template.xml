@@ -10,7 +10,6 @@
                         <!-- <img t-att-src="doc.company_id.logo" style="max-width: 150px;" alt="Company Logo"/> -->
                     </div>
                     <div class="col-6" style="text-align: right;">
-                        <!-- Puedes modificar o eliminar estos campos si ya no necesitas mostrar la información de la compañía -->
                         <p style="margin: 0; font-size: 14px;"><strong t-esc="doc.company_id.name"/></p>
                         <p style="margin: 0; font-size: 12px;" t-esc="doc.company_id.street"/>
                         <p style="margin: 0; font-size: 12px;">
@@ -28,9 +27,10 @@
                         <p style="margin: 0; font-size: 12px;">RFC: <span t-esc="doc.partner_id.vat"/></p>
                     </div>
                     <div class="col-6" style="text-align: right;">
-                        <p style="margin: 0; font-size: 14px;"><strong>Dirección de Envío:</strong></p>
+                        <!-- Aquí eliminamos la referencia al campo inexistente -->
+                        <!-- <p style="margin: 0; font-size: 14px;"><strong>Dirección de Envío:</strong></p>
                         <p style="margin: 0; font-size: 12px;" t-esc="doc.partner_shipping_id.street"/>
-                        <p style="margin: 0; font-size: 12px;">Tel: <span t-esc="doc.partner_shipping_id.phone"/></p>
+                        <p style="margin: 0; font-size: 12px;">Tel: <span t-esc="doc.partner_shipping_id.phone"/></p> -->
                     </div>
                 </div>
 
