@@ -5,50 +5,34 @@
             <t t-foreach="docs" t-as="doc">
                 <t t-call="web.external_layout">
                     <div class="page">
-                        <!-- Tabla para dividir en dos columnas -->
-                        <table style="width: 100%; margin-bottom: 20px;">
-                      <!-- Información del Proveedor -->
-                        <tr>
-                            <td colspan="2" style="width: 100%;">
-                                <div style="display: flex; width: 100%;">
-                                    <!-- Columna 1 -->
-                                    <div style="width: 50%; padding-right: 10px; box-sizing: border-box;">
-                                        <p style="margin: 0; font-size: 14px; line-height: 1.6;">
-                                            <strong>Proveedor:</strong><br />
-                                            <span t-esc="doc.partner_id.name"/>
-                                        </p>
-                                        <p style="margin: 5px 0; font-size: 12px; color: #555; line-height: 1.4;">
-                                            <span t-esc="doc.partner_id.street"/><br />
-                                            <span t-esc="doc.partner_id.city"/>, <span t-esc="doc.partner_id.state_id.name"/><br />
-                                            <strong>RFC:</strong> <span t-esc="doc.partner_id.vat"/>
-                                        </p>
-                                    </div>
-                                    <!-- Columna 2 -->
-                                    <div style="width: 50%; padding-left: 10px; box-sizing: border-box;">
-                                        <!-- Puedes agregar más información aquí o dejarlo vacío si solo necesitas una columna -->
-                                        <p style="margin: 0; font-size: 14px; line-height: 1.6;">
-                                            <strong>Otra Información:</strong><br />
-                                            <!-- <span t-esc="doc.partner_id.other_info"/> -->
-                                        </p>
-                                    </div>
-                                </div>
-                            </td>
-                                <!-- Fechas del Pedido
-                                <td style="width: 50%; vertical-align: top; text-align: right;">
-                                    <p style="margin: 0; font-size: 14px; line-height: 1.6;">
-                                        <strong>Fecha del pedido:</strong> <span t-esc="doc.date_order"/><br />
-                                        <strong>Fecha requerida:</strong> <span t-esc="doc.date_planned"/><br />
-                                        <strong>Solicitud de Presupuesto:</strong> <span t-esc="doc.name"/>
-                                    </p>
-                                </td> -->
-                            </tr>
-                        </table>
+                        <!-- Contenido en dos columnas -->
+                        <div style="display: flex; width: 100%; margin-bottom: 20px;">
+                            <!-- Columna 1 -->
+                            <div style="width: 50%; padding-right: 10px; box-sizing: border-box;">
+                                <p style="margin: 0; font-size: 14px; line-height: 1.6;">
+                                    <strong>Proveedor:</strong><br />
+                                    Nombre del Proveedor
+                                </p>
+                                <p style="margin: 5px 0; font-size: 12px; color: #555; line-height: 1.4;">
+                                    Dirección del Proveedor<br />
+                                    Ciudad del Proveedor, Estado del Proveedor<br />
+                                    <strong>RFC:</strong> RFC del Proveedor
+                                </p>
+                            </div>
+                            <!-- Columna 2 -->
+                            <div style="width: 50%; padding-left: 10px; box-sizing: border-box;">
+                                <p style="margin: 0; font-size: 14px; line-height: 1.6;">
+                                    <strong>Otra Información:</strong><br />
+                                    Información adicional o vacía
+                                </p>
+                            </div>
+                        </div>
 
                         <!-- Solicitud de Presupuesto -->
                         <div class="request-header" style="padding: 10px; border-bottom: 1px solid #ddd; margin-bottom: 20px; font-size: 14px;">
-                            <p><strong>Requisición de Presupuesto #<span t-esc="doc.name"/></strong></p>
-                            <p>Representante del Proveedor: <span t-esc="doc.user_id.name"/></p>
-                            <p>Fecha del pedido: <span t-esc="doc.date_order"/></p>
+                            <p><strong>Requisición de Presupuesto #Número de Presupuesto</strong></p>
+                            <p>Representante del Proveedor: Nombre del Representante</p>
+                            <p>Fecha del pedido: Fecha del Pedido</p>
                         </div>
 
                         <!-- Detalles de la Orden de Compra -->
@@ -62,11 +46,11 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr t-foreach="doc.order_line" t-as="line">
-                                    <td style="padding: 8px; border: 1px solid #ddd;" t-esc="line.name"/>
-                                    <td style="padding: 8px; border: 1px solid #ddd; text-align: right;" t-esc="line.product_qty"/>
-                                    <td style="padding: 8px; border: 1px solid #ddd; text-align: right;" t-esc="line.price_unit"/>
-                                    <td style="padding: 8px; border: 1px solid #ddd; text-align: right;" t-esc="line.price_total"/>
+                                <tr>
+                                    <td style="padding: 8px; border: 1px solid #ddd;">Descripción del Producto</td>
+                                    <td style="padding: 8px; border: 1px solid #ddd; text-align: right;">Cantidad</td>
+                                    <td style="padding: 8px; border: 1px solid #ddd; text-align: right;">Precio Unitario</td>
+                                    <td style="padding: 8px; border: 1px solid #ddd; text-align: right;">Monto Total</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -76,15 +60,15 @@
                             <tbody>
                                 <tr>
                                     <td style="padding: 8px; border: 1px solid #ddd;"><strong>Subtotal:</strong></td>
-                                    <td class="text-right" style="padding: 8px; border: 1px solid #ddd;" t-esc="doc.amount_untaxed"/>
+                                    <td class="text-right" style="padding: 8px; border: 1px solid #ddd;">Subtotal en Moneda</td>
                                 </tr>
                                 <tr>
                                     <td style="padding: 8px; border: 1px solid #ddd;"><strong>Impuestos (16%):</strong></td>
-                                    <td class="text-right" style="padding: 8px; border: 1px solid #ddd;" t-esc="doc.amount_tax"/>
+                                    <td class="text-right" style="padding: 8px; border: 1px solid #ddd;">Impuestos en Moneda</td>
                                 </tr>
                                 <tr>
                                     <td style="padding: 8px; border: 1px solid #ddd;"><strong>Total:</strong></td>
-                                    <td class="text-right" style="padding: 8px; border: 1px solid #ddd;"><strong t-esc="doc.amount_total"/></td>
+                                    <td class="text-right" style="padding: 8px; border: 1px solid #ddd;"><strong>Total en Moneda</strong></td>
                                 </tr>
                             </tbody>
                         </table>
