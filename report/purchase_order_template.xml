@@ -10,20 +10,26 @@
                         <div class="col-6" style="width: 48%;">
                             <p style="margin: 0; font-size: 14px; line-height: 1.6;">
                                 <strong>Proveedor:</strong><br />
-                                <span t-esc="doc.partner_id.name"/>
+                                Industrias Químicas Orion S.A. de C.V.
                             </p>
                             <p style="margin: 5px 0; font-size: 12px; color: #555; line-height: 1.4;">
-                                <span t-esc="doc.partner_id.street"/><br />
-                                <strong>RFC:</strong> <span t-esc="doc.partner_id.vat"/>
+                                Avenida de las Estrellas No. 123<br />
+                                Parque Industrial Norte, 54030 Tlalnepantla, Estado de México<br />
+                                <strong>RFC:</strong> IQO990123H12
                             </p>
                         </div>
 
-                        <!-- Fechas -->
+                        <!-- Dirección de Entrega y Fechas -->
                         <div class="col-6 text-right" style="width: 48%; display: flex; flex-direction: column; align-items: flex-end; justify-content: space-between;">
+                            <p style="margin: 0; font-size: 14px; line-height: 1.6;">
+                                <strong>Dirección de Entrega:</strong><br />
+                                Calle del Trabajo No. 456, Col. Industrial<br />
+                                03100 Ciudad de México, CDMX
+                            </p>
                             <p style="margin: 0; font-size: 12px; color: #555; text-align: right; line-height: 1.4;">
-                                <strong>Fecha del pedido:</strong> <span t-esc="doc.date_order"/><br />
-                                <strong>Fecha requerida:</strong> <span t-esc="doc.date_planned"/><br />
-                                <strong>Solicitud de Presupuesto:</strong> <span t-esc="doc.name"/>
+                                <strong>Fecha del pedido:</strong> 15/08/2024 11:30:00<br />
+                                <strong>Fecha requerida:</strong> 20/08/2024 08:00:00<br />
+                                <strong>Solicitud de Presupuesto:</strong> #OR-458712
                             </p>
                         </div>
                     </div>
@@ -31,9 +37,9 @@
 
                 <!-- Solicitud de Presupuesto -->
                 <div class="request-header" style="padding: 10px; border-bottom: 1px solid #ddd; margin-bottom: 20px; font-size: 14px;">
-                    <p><strong>Requisición de Presupuesto #<span t-esc="doc.name"/></strong></p>
-                    <p>Representante del Proveedor: <span t-esc="doc.user_id.name"/></p>
-                    <p>Fecha del pedido: <span t-esc="doc.date_order"/></p>
+                    <p><strong>Requisición de Presupuesto #OC0001</strong></p>
+                    <p>Representante del Proveedor: Juan Pérez</p>
+                    <p>Fecha del pedido: 15/08/2024 11:30:00</p>
                 </div>
 
                 <!-- Detalles de la Orden de Compra -->
@@ -47,41 +53,32 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr t-foreach="doc.order_line" t-as="line">
-                            <td style="padding: 8px; border: 1px solid #ddd;" t-esc="line.name"/>
-                            <td style="padding: 8px; border: 1px solid #ddd; text-align: right;" t-esc="line.product_qty"/>
-                            <td style="padding: 8px; border: 1px solid #ddd; text-align: right;" t-esc="line.price_unit"/>
-                            <td style="padding: 8px; border: 1px solid #ddd; text-align: right;" t-esc="line.price_total"/>
+                        <tr>
+                            <td style="padding: 8px; border: 1px solid #ddd;">BANDA DE TIEMPO DA630H100</td>
+                            <td style="padding: 8px; border: 1px solid #ddd; text-align: right;">2.00 UNIDAD</td>
+                            <td style="padding: 8px; border: 1px solid #ddd; text-align: right;">$1,764.00</td>
+                            <td style="padding: 8px; border: 1px solid #ddd; text-align: right;">$3,528.00</td>
                         </tr>
                     </tbody>
                 </table>
 
                 <!-- Totales -->
-                <table style="width: 50%; border-collapse: collapse; margin-top: 20px; margin-left: auto; font-size: 14px;">
+                <table class="subtotal-section" style="width: 50%; border-collapse: collapse; margin-top: 20px; margin-left: auto; font-size: 14px;">
                     <tbody>
                         <tr>
                             <td style="padding: 8px; border: 1px solid #ddd;"><strong>Subtotal:</strong></td>
-                            <td class="text-right" style="padding: 8px; border: 1px solid #ddd;" t-esc="doc.amount_untaxed"/>
+                            <td class="text-right" style="padding: 8px; border: 1px solid #ddd;">$3,528.00</td>
                         </tr>
                         <tr>
                             <td style="padding: 8px; border: 1px solid #ddd;"><strong>Impuestos (16%):</strong></td>
-                            <td class="text-right" style="padding: 8px; border: 1px solid #ddd;" t-esc="doc.amount_tax"/>
+                            <td class="text-right" style="padding: 8px; border: 1px solid #ddd;">$564.44</td>
                         </tr>
                         <tr>
                             <td style="padding: 8px; border: 1px solid #ddd;"><strong>Total:</strong></td>
-                            <td class="text-right" style="padding: 8px; border: 1px solid #ddd;"><strong t-esc="doc.amount_total"/></td>
+                            <td class="text-right" style="padding: 8px; border: 1px solid #ddd;"><strong>$4,092.44</strong></td>
                         </tr>
                     </tbody>
                 </table>
-
-                <!-- Información adicional -->
-                <div class="additional-info" style="margin-top: 20px; font-size: 12px; display: flex; justify-content: center; align-items: center;">
-                    <div class="info-block" style="border: 1px solid #ddd; padding: 10px; margin-bottom: 10px;">
-                        <p>Datos adicionales del proveedor:</p>
-                        <p>Email: <span t-esc="doc.partner_id.email"/></p>
-                        <p>Tel: <span t-esc="doc.partner_id.phone"/></p>
-                    </div>
-                </div>
 
             </main>
         </div>
