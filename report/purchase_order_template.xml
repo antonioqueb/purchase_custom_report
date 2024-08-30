@@ -7,20 +7,32 @@
                     <div class="page">
                         <!-- Tabla para dividir en dos columnas -->
                         <table style="width: 100%; margin-bottom: 20px;">
-                            <tr>
-                                <!-- Información del Proveedor -->
-                                <td style="width: 50%; vertical-align: top;">
-                                    <p style="margin: 0; font-size: 14px; line-height: 1.6;">
-                                        <strong>Proveedor:</strong><br />
-                                        <span t-esc="doc.partner_id.name"/>
-                                    </p>
-                                    <p style="margin: 5px 0; font-size: 12px; color: #555; line-height: 1.4;">
-                                        <span t-esc="doc.partner_id.street"/><br />
-                                        <span t-esc="doc.partner_id.city"/>, <span t-esc="doc.partner_id.state_id.name"/><br />
-                                        <strong>RFC:</strong> <span t-esc="doc.partner_id.vat"/>
-                                    </p>
-                                </td>
-
+                      <!-- Información del Proveedor -->
+                        <tr>
+                            <td colspan="2" style="width: 100%;">
+                                <div style="display: flex; width: 100%;">
+                                    <!-- Columna 1 -->
+                                    <div style="width: 50%; padding-right: 10px; box-sizing: border-box;">
+                                        <p style="margin: 0; font-size: 14px; line-height: 1.6;">
+                                            <strong>Proveedor:</strong><br />
+                                            <span t-esc="doc.partner_id.name"/>
+                                        </p>
+                                        <p style="margin: 5px 0; font-size: 12px; color: #555; line-height: 1.4;">
+                                            <span t-esc="doc.partner_id.street"/><br />
+                                            <span t-esc="doc.partner_id.city"/>, <span t-esc="doc.partner_id.state_id.name"/><br />
+                                            <strong>RFC:</strong> <span t-esc="doc.partner_id.vat"/>
+                                        </p>
+                                    </div>
+                                    <!-- Columna 2 -->
+                                    <div style="width: 50%; padding-left: 10px; box-sizing: border-box;">
+                                        <!-- Puedes agregar más información aquí o dejarlo vacío si solo necesitas una columna -->
+                                        <p style="margin: 0; font-size: 14px; line-height: 1.6;">
+                                            <strong>Otra Información:</strong><br />
+                                            <span t-esc="doc.partner_id.other_info"/>
+                                        </p>
+                                    </div>
+                                </div>
+                            </td>
                                 <!-- Fechas del Pedido -->
                                 <td style="width: 50%; vertical-align: top; text-align: right;">
                                     <p style="margin: 0; font-size: 14px; line-height: 1.6;">
