@@ -1,12 +1,12 @@
 <odoo>
     <record id="action_report_purchase_order_custom" model="ir.actions.report">
-        <field name="name">Purchase Order Custom</field>
-        <field name="model">purchase.order</field>
-        <field name="report_type">qweb-pdf</field>
-        <field name="report_name">purchase_custom_report.report_purchaseorder_document_custom</field>
-        <field name="report_file">purchase_custom_report.report_purchaseorder_document_custom</field>
+        <field name="name">Purchase Order Custom</field>  <!-- Nombre del reporte en el sistema -->
+        <field name="model">purchase.order</field>  <!-- Modelo al que está asociado el reporte -->
+        <field name="report_type">qweb-pdf</field>  <!-- Tipo de reporte, en este caso PDF generado con QWeb -->
+        <field name="report_name">purchase_custom_report.report_purchaseorder_document_custom</field>  <!-- Nombre del template QWeb asociado -->
+        <field name="report_file">purchase_custom_report.report_purchaseorder_document_custom</field>  <!-- Nombre del archivo del template -->
         <field name="print_report_name">
             (object.state in ('draft', 'sent') and 'Request for Quotation - %s' % (object.name) or 'Purchase Order - %s' % (object.name))
-        </field>
+        </field> <!-- Nombre del archivo de impresión, personalizado según el estado -->
     </record>
 </odoo>
