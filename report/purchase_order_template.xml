@@ -1,9 +1,8 @@
 <odoo>
     <template id="report_purchaseorder_document_custom">
         <div class="page" style="font-family: 'DejaVu Sans', sans-serif; margin: 20px;">
-            <!-- Iterar sobre los documentos (orders) -->
             <main t-foreach="docs" t-as="doc">
-                <!-- Información del Proveedor -->
+                <!-- Información del Proveedor y Dirección de Entrega -->
                 <div class="header-section" style="padding: 10px; margin-bottom: 20px;">
                     <div class="row" style="display: flex; justify-content: space-between; margin-bottom: 20px;">
                         <!-- Información del Proveedor -->
