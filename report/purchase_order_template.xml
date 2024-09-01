@@ -5,36 +5,35 @@
             <t t-foreach="docs" t-as="doc">
                 <t t-call="web.external_layout">
                     <div class="page">
-                     <!-- Contenido en dos columnas -->
-            <div style="display: flex; width: 100%; margin-bottom: 20px;">
-                <!-- Columna 1 -->
-                <div style="width: 50%; padding-right: 10px; box-sizing: border-box;">
-                    <p style="margin: 0; font-size: 14px; line-height: 1.6;">
-                        <strong>Proveedor:</strong><br />
-                        Nombre del Proveedor
-                    </p>
-                    <p style="margin: 5px 0; font-size: 12px; color: #555; line-height: 1.4;">
-                        Dirección del Proveedor<br />
-                        Ciudad del Proveedor, Estado del Proveedor<br />
-                        <strong>RFC:</strong> RFC del Proveedor
-                    </p>
-                </div>
-                <!-- Columna 2 -->
-                <div style="width: 50%; padding-left: 10px; box-sizing: border-box;">
-                    <p style="margin: 0; font-size: 14px; line-height: 1.6;">
-                        <strong>Otra Información:</strong><br />
-                        Información adicional o vacía
-                    </p>
-                </div>
-            </div>
+                        <!-- Contenido en dos columnas -->
+                        <div style="display: flex; width: 100%; margin-bottom: 20px; align-items: flex-start;">
+                            <!-- Columna 1 -->
+                            <div style="flex: 1; padding-right: 10px; box-sizing: border-box;">
+                                <p style="margin: 0; font-size: 14px; line-height: 1.6;">
+                                    <strong>Proveedor:</strong><br />
+                                    Nombre del Proveedor
+                                </p>
+                                <p style="margin: 5px 0; font-size: 12px; color: #555; line-height: 1.4;">
+                                    Dirección del Proveedor<br />
+                                    Ciudad del Proveedor, Estado del Proveedor<br />
+                                    <strong>RFC:</strong> RFC del Proveedor
+                                </p>
+                            </div>
+                            <!-- Columna 2 -->
+                            <div style="flex: 1; padding-left: 10px; box-sizing: border-box;">
+                                <p style="margin: 0; font-size: 14px; line-height: 1.6;">
+                                    <strong>Otra Información:</strong><br />
+                                    Información adicional o vacía
+                                </p>
+                            </div>
+                        </div>
 
-            <!-- Solicitud de Presupuesto -->
-            <div class="request-header" style="padding: 10px; border-bottom: 1px solid #ddd; margin-bottom: 20px; font-size: 14px;">
-                <p><strong>Requisición de Presupuesto #Número de Presupuesto</strong></p>
-                <p>Representante del Proveedor: Nombre del Representante</p>
-                <p>Fecha del pedido: Fecha del Pedido</p>
-            </div>
-
+                        <!-- Solicitud de Presupuesto -->
+                        <div class="request-header" style="padding: 10px; border-bottom: 1px solid #ddd; margin-bottom: 20px; font-size: 14px;">
+                            <p><strong>Requisición de Presupuesto #Número de Presupuesto</strong></p>
+                            <p>Representante del Proveedor: Nombre del Representante</p>
+                            <p>Fecha del pedido: Fecha del Pedido</p>
+                        </div>
 
                         <!-- Detalles de la Orden de Compra -->
                         <table style="width: 100%; border-collapse: collapse; margin-top: 10px;">
