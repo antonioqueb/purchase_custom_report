@@ -19,9 +19,14 @@
                                         <strong>RFC:</strong> RFC del Proveedor
                                     </p>
                                 </td>
-                                <td style="width: 50%; padding: 8px;  vertical-align: top; border: 1px solid #ffffff">
+                                <td style="
+                                width: 50%; padding: 8px;  vertical-align: top; border: 1px solid #ffffff">
                                      <p style="margin: 5px 0; font-size: 12px; color: #555; line-height: 1.4;">
-                                        Dirección de Entrega<br />
+                                      <p style="margin: 0; font-size: 14px; line-height: 1.6;">
+                                        <strong>Dirección de Entrega:</strong><br />
+                                        Nombre del Receptor
+                                    </p>
+                                        <br />
                                         Ciudad de entrega, Estado de Entrega<br />
                                         <strong>#:</strong> 18 C
                                     </p>
