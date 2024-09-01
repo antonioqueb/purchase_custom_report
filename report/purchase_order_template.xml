@@ -35,46 +35,46 @@
                         </table>
 
                         <!-- Solicitud de Presupuesto -->
-                        <div class="request-header" style="padding: 10px; border-bottom: 1px solid #ddd; margin-bottom: 20px; font-size: 14px;">
-                            <p><strong>Requisición de Presupuesto #Número de Presupuesto</strong></p>
-                            <p>Representante del Proveedor: Nombre del Representante</p>
-                            <p>Fecha del pedido: Fecha del Pedido</p>
+                        <div class="request-header" style="padding: 15px; border-bottom: 2px solid #ddd; margin-bottom: 30px; font-size: 16px; background-color: #f9f9f9;">
+                            <p style="margin-bottom: 5px;"><strong>Requisición de Presupuesto #Número de Presupuesto</strong></p>
+                            <p style="margin-bottom: 5px;">Representante del Proveedor: Nombre del Representante</p>
+                            <p style="margin-bottom: 0;">Fecha del pedido: Fecha del Pedido</p>
                         </div>
 
                         <!-- Detalles de la Orden de Compra -->
-                        <table style="width: 100%; border-collapse: collapse; margin-top: 10px;">
+                        <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
                             <thead>
                                 <tr style="background-color: #f0f0f0;">
-                                    <th style="padding: 8px; border: 1px solid #ddd; text-align: left;">Descripción</th>
-                                    <th style="padding: 8px; border: 1px solid #ddd; text-align: right;">Cant</th>
-                                    <th style="padding: 8px; border: 1px solid #ddd; text-align: right;">Precio Unidad</th>
-                                    <th style="padding: 8px; border: 1px solid #ddd; text-align: right;">Monto</th>
+                                    <th style="padding: 12px; border: 1px solid #ddd; text-align: left;">Descripción</th>
+                                    <th style="padding: 12px; border: 1px solid #ddd; text-align: right;">Cant</th>
+                                    <th style="padding: 12px; border: 1px solid #ddd; text-align: right;">Precio Unidad</th>
+                                    <th style="padding: 12px; border: 1px solid #ddd; text-align: right;">Monto</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td style="padding: 8px; border: 1px solid #ddd;">Descripción del Producto</td>
-                                    <td style="padding: 8px; border: 1px solid #ddd; text-align: right;">Cantidad</td>
-                                    <td style="padding: 8px; border: 1px solid #ddd; text-align: right;">Precio Unitario</td>
-                                    <td style="padding: 8px; border: 1px solid #ddd; text-align: right;">Monto Total</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">Descripción del Producto</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">Cantidad</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">Precio Unitario</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">Monto Total</td>
                                 </tr>
                             </tbody>
                         </table>
 
                         <!-- Totales -->
-                        <table class="subtotal-section" style="width: 50%; border-collapse: collapse; margin-top: 20px; margin-left: auto; font-size: 14px;">
+                        <table class="subtotal-section" style="width: 60%; border-collapse: collapse; margin-top: 30px; margin-left: auto; font-size: 16px;">
                             <tbody>
                                 <tr>
-                                    <td style="padding: 8px; border: 1px solid #ddd;"><strong>Subtotal:</strong></td>
-                                    <td class="text-right" style="padding: 8px; border: 1px solid #ddd;">Subtotal en Moneda</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd;"><strong>Subtotal:</strong></td>
+                                    <td class="text-right" style="padding: 10px; border: 1px solid #ddd;">Subtotal en Moneda</td>
                                 </tr>
                                 <tr>
-                                    <td style="padding: 8px; border: 1px solid #ddd;"><strong>Impuestos (16%):</strong></td>
-                                    <td class="text-right" style="padding: 8px; border: 1px solid #ddd;">Impuestos en Moneda</td>
+                                    <td style="padding: 10px; border: 1px solid #ddd;"><strong>Impuestos (16%):</strong></td>
+                                    <td class="text-right" style="padding: 10px; border: 1px solid #ddd;">Impuestos en Moneda</td>
                                 </tr>
                                 <tr>
-                                    <td style="padding: 8px; border: 1px solid #ddd;"><strong>Total:</strong></td>
-                                    <td class="text-right" style="padding: 8px; border: 1px solid #ddd;"><strong>Total en Moneda</strong></td>
+                                    <td style="padding: 10px; border: 1px solid #ddd;"><strong>Total:</strong></td>
+                                    <td class="text-right" style="padding: 10px; border: 1px solid #ddd;"><strong>Total en Moneda</strong></td>
                                 </tr>
                             </tbody>
                         </table>
