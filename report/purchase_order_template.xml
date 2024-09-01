@@ -35,11 +35,12 @@
                         </table>
 
                         <!-- Solicitud de Presupuesto -->
-                        <div class="request-header" style="padding: 15px; border-bottom: 2px solid #ddd; margin-bottom: 30px; font-size: 16px; background-color: #f9f9f9;">
-                            <p style="margin-bottom: 5px;"><strong>Requisición de Presupuesto #Número de Presupuesto</strong></p>
-                            <p style="margin-bottom: 5px;">Representante del Proveedor: Nombre del Representante</p>
-                            <p style="margin-bottom: 0;">Fecha del pedido: Fecha del Pedido</p>
+                        <div class="request-header" style="padding: 20px; border-bottom: 3px solid #cccccc; margin-bottom: 35px; font-size: 18px; background-color: #f1f1f1; border-radius: 5px;">
+                            <p style="margin-bottom: 10px; font-size: 24px; font-weight: bold; color: #333333;"><strong>Requisición de Presupuesto #Número de Presupuesto</strong></p>
+                            <p style="margin-bottom: 10px; font-size: 16px; color: #555555;">Representante del Proveedor: <span style="font-weight: bold; color: #000000;">Nombre del Representante</span></p>
+                            <p style="margin-bottom: 0; font-size: 16px; color: #555555;">Fecha del pedido: <span style="font-weight: bold; color: #000000;">Fecha del Pedido</span></p>
                         </div>
+
 
                         <!-- Detalles de la Orden de Compra -->
                         <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
