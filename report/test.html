@@ -64,8 +64,6 @@
         .header-section {
             padding: 10px;
             margin-bottom: 20px;
-            justify-content: space-between;
-            align-items: center;
         }
 
         .subtotal-section {
@@ -126,37 +124,36 @@
 <body>
     <div class="page">
 
-        <!-- Información del Proveedor -->
-        <div class="header-section">
-          
-                <!-- Información del Proveedor -->
-                <div class="col-6">
-                    <p style="margin: 0; font-size: 14px; line-height: 1.6;">
-                        <strong>Proveedor:</strong><br />
-                        Industrias Químicas Orion S.A. de C.V.
-                    </p>
-                    <p style="margin: 5px 0; font-size: 12px; color: #555; line-height: 1.4;">
-                        Avenida de las Estrellas No. 123<br />
-                        Parque Industrial Norte, 54030 Tlalnepantla, Estado de México<br />
-                        <strong>RFC:</strong> IQO990123H12
-                    </p>
-                </div>
+     <!-- Información del Proveedor -->
+<div class="header-section" style="display: flex; justify-content: space-between;">
 
-                <!-- Dirección de Entrega y Fechas -->
-                <div class="col-6 text-right"
-                    style="display: flex; flex-direction: column; align-items: flex-end; justify-content: space-between;">
-                    <p style="margin: 0; font-size: 14px; line-height: 1.6;">
-                        <strong>Dirección de Entrega:</strong><br />
-                        Calle del Trabajo No. 456, Col. Industrial<br />
-                        03100 Ciudad de México, CDMX
-                    </p>
-                    <p style="margin: 0; font-size: 12px; color: #555; text-align: right; line-height: 1.4;">
-                        <strong>Fecha del pedido:</strong> 15/08/2024 11:30:00<br />
-                        <strong>Fecha requerida:</strong> 20/08/2024 08:00:00<br />
-                        <strong>Solicitud de Presupuesto:</strong> #OR-458712
-                    </p>
-                </div>
-        </div>
+    <!-- Columna 1: Información del Proveedor -->
+    <div class="col-6" style="width: 48%;">
+        <p style="margin: 0; font-size: 14px; line-height: 1.6;">
+            <strong>Proveedor:</strong><br />
+            Industrias Químicas Orion S.A. de C.V.
+        </p>
+        <p style="margin: 5px 0; font-size: 12px; color: #555; line-height: 1.4;">
+            Avenida de las Estrellas No. 123<br />
+            Parque Industrial Norte, 54030 Tlalnepantla, Estado de México<br />
+            <strong>RFC:</strong> IQO990123H12
+        </p>
+    </div>
+
+    <!-- Columna 2: Dirección de Entrega y Fechas -->
+    <div class="col-6" style="width: 48%; text-align: right;">
+        <p style="margin: 0; font-size: 14px; line-height: 1.6;">
+            <strong>Dirección de Entrega:</strong><br />
+            Calle del Trabajo No. 456, Col. Industrial<br />
+            03100 Ciudad de México, CDMX
+        </p>
+        <p style="margin: 0; font-size: 12px; color: #555; line-height: 1.4;">
+            <strong>Fecha del pedido:</strong> 15/08/2024 11:30:00<br />
+            <strong>Fecha requerida:</strong> 20/08/2024 08:00:00<br />
+            <strong>Solicitud de Presupuesto:</strong> #OR-458712
+        </p>
+    </div>
+</div>
 
         <!-- Solicitud de Presupuesto -->
         <div class="request-header">
