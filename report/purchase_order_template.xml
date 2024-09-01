@@ -8,7 +8,7 @@
                         <!-- Contenido en dos columnas -->
                         <table style="width: 100%; margin-bottom: 20px; border-collapse: collapse; border: none;">
                             <tr style="border: none;">
-                                <td style="width: 50%; padding-right: 10px; vertical-align: top; border: none;">
+                                <td style="width: 50%; padding-right: 10px; vertical-align: top; border: none; background-color: transparent;">
                                     <p style="margin: 0; font-size: 14px; line-height: 1.6;">
                                         <strong>Proveedor:</strong><br />
                                         Nombre del Proveedor
@@ -19,7 +19,7 @@
                                         <strong>RFC:</strong> RFC del Proveedor
                                     </p>
                                 </td>
-                                <td style="width: 50%; padding-left: 10px; vertical-align: top; border: none;">
+                                <td style="width: 50%; padding-left: 10px; vertical-align: top; border: none; background-color: transparent;">
                                     <p style="margin: 0; font-size: 14px; line-height: 1.6;">
                                         <strong>Otra Información:</strong><br />
                                         Información adicional o vacía
