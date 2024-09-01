@@ -35,7 +35,7 @@
                         </table>
 
                         <!-- Solicitud de Presupuesto -->
-                        <div class="request-header" style="padding: 20px; border-bottom: 3px solid #cccccc; margin-bottom: 35px; font-size: 18px; border-radius: 5px;">
+                        <div class="request-header" style="padding: 20px; margin-bottom: 35px; font-size: 18px; border-radius: 5px;">
                             <p style="margin-bottom: 10px; font-size: 26x; font-weight: 900; color: #333333;"><strong>Requisición de Presupuesto #PC00024</strong></p>
                             <p style="margin-bottom: 10px; font-size: 16px; color: #555555;">Representante del Proveedor: <span style="font-weight: bold; color: #000000;">Nombre del Representante</span></p>
                             <p style="margin-bottom: 0; font-size: 16px; color: #555555;">Fecha del pedido: <span style="font-weight: bold; color: #000000;">Fecha del Pedido</span></p>
