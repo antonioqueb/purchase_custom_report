@@ -8,7 +8,7 @@
                         <!-- Contenido en dos columnas -->
                         <table style="width: 100%; margin-bottom: 20px; border-collapse: collapse; ">
                             <tr>
-                                <td style="width: 50%; padding: 8px;  vertical-align: top; border: 1px solid #ddd">
+                                <td style="width: 50%; padding: 8px;  vertical-align: top; border: 1px solid #ffffff">
                                     <p style="margin: 0; font-size: 14px; line-height: 1.6;">
                                         <strong>Proveedor:</strong><br />
                                         Nombre del Proveedor
