@@ -101,7 +101,7 @@
                         </table>
 
                         <!-- Totales -->
-                        <table class="subtotal-section" style="width: 60%; border-collapse: collapse; margin-top: 30px; margin-left: auto; font-size: 16px;">
+                        <table class="subtotal-section" style="width: 35%; border-collapse: collapse; margin-top: 30px; margin-left: auto; font-size: 16px;">
                             <tbody>
                                 <tr>
                                     <td style="padding: 10px; border: 1px solid #ddd;">
