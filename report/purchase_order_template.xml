@@ -47,10 +47,10 @@
                                     <t t-if="o.state in ['draft', 'sent', 'to approve']">
                                         <strong>Requisición de Presupuesto <span t-field="o.name"/></strong>
                                     </t>
-                                    <t t-if="o.state in ['purchase', 'done']">
+                                    <t t-elif="o.state in ['purchase', 'done']">
                                         <strong>Orden de Compra <span t-field="o.name"/></strong>
                                     </t>
-                                    <t t-if="o.state == 'cancel'">
+                                    <t t-elif="o.state == 'cancel'">
                                         <strong>Orden de Compra Cancelada <span t-field="o.name"/></strong>
                                     </t>
                                 </p>
