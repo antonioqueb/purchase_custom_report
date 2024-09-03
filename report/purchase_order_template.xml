@@ -22,10 +22,10 @@
                                 <td style="width: 50%; padding: 8px; vertical-align: top; border: 1px solid #ffffff">
                                     <p style="margin: 0; font-size: 14px; line-height: 1.6;">
                                         <strong>Dirección de Entrega:</strong><br />
-                                        Ciudad de entrega, Estado de Entrega<br />
-                                        <strong>#:</strong> 18 C
+                                        <t t-esc="doc.custom_delivery_address"/>
                                     </p>
                                 </td>
+
                             </tr>
                         </table>
 
@@ -106,7 +106,7 @@
                                 </tr>
                                 <tr>
                                     <td style="padding: 10px; border: 1px solid #ddd;">
-                                        <strong>Impuestos (16%):</strong>
+                                        <strong>Impuestos:</strong>
                                     </td>
                                     <td class="text-right" style="padding: 10px; border: 1px solid #ddd;">
                                         <span t-field="o.amount_tax" 
