@@ -26,9 +26,8 @@
                                         <strong>Dirección de Entrega:</strong><br />
                                         <strong style="display: block; margin: 0, 0, 5px, 0;">HEXÁGONOS MEXICANOS</strong>
                                         <span t-esc="o.custom_delivery_address" style="display: block; margin: 0;"/>
-                                        <br />
-                                        <span style="display: block; margin: 0; padding-top: 5px;">
-                                            <i class="fa fa-phone" style="margin-right: 5px;"></i> +52 8111891819
+                                        <span style="display: block; margin: 0; padding-top: 5px; font-size: 14px;">
+                                            <i class="fa fa-phone" style="margin-right: 5px;"></i>( 811 )-189-18-19
                                         </span>
                                     </p>
 
