@@ -1,7 +1,9 @@
 <odoo>
     <template id="report_purchaseorder_document_custom">
         <t t-call="web.external_layout">
-            <t t-set="o" t-value="o.with_context(lang=o.partner_id.lang)"/>
+            <!-- Asegúrate de establecer correctamente el objeto de orden de compra -->
+            <t t-set="o" t-value="doc"/>
+
             <div class="page">
                 <!-- Contenido en dos columnas -->
                 <table style="width: 100%; margin-bottom: 20px; border-collapse: collapse;">
