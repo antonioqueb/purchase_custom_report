@@ -22,6 +22,7 @@
                                 <td style="width: 50%; padding: 8px; vertical-align: top; border: 1px solid #ffffff">
                                     <p style="margin: 0; font-size: 14px; line-height: 1.6;">
                                         <strong>Dirección de Entrega:</strong><br />
+                                        <p><strong>HEXÁGONOS MEXICANOS</strong></p><br />
                                         <t t-esc="o.custom_delivery_address"/>
                                     </p>
                                 </td>
