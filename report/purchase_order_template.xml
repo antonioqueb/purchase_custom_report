@@ -33,13 +33,13 @@
                         <div class="request-header" style="padding: 20px; margin-bottom: 35px; font-size: 18px; border-radius: 5px;">
                             <p style="margin-bottom: 10px; font-size: 26px; font-weight: 900; color: #333333;">
                                 <t t-if="o.state in ['draft', 'sent', 'to approve']">
-                                    <strong>Requisición de Presupuesto <span t-field="o.name"/></strong>
+                                    <strong>Requisición de Materiales #<span t-field="o.name"/></strong>
                                 </t>
                                 <t t-if="o.state in ['purchase', 'done']">
-                                    <strong>Orden de Compra <span t-field="o.name"/></strong>
+                                    <strong>Pedido de Compra #<span t-field="o.name"/></strong>
                                 </t>
                                 <t t-if="o.state == 'cancel'">
-                                    <strong>Orden de Compra Cancelada <span t-field="o.name"/></strong>
+                                    <strong>Pedido de Compra Cancelado #<span t-field="o.name"/></strong>
                                 </t>
                             </p>
                             <p style="margin-bottom: 10px; font-size: 16px; color: #555555;">
