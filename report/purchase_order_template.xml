@@ -51,9 +51,9 @@
                                 </t>
                             </p>
                             <p style="margin-bottom: 3px; font-size: 16px; color: #555555;">
-                                Representante del Proveedor: 
+                                Representante: 
                                 <span style="font-weight: bold; color: #000000;">
-                                    <span t-field="o.user_id.name"/>
+                                    <strong>Lic. Alejandra Aguilar</strong>
                                 </span>
                             </p>
                             <p style="margin-bottom: 0; font-size: 16px; color: #555555;">
