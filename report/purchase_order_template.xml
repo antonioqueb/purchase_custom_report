@@ -3,179 +3,183 @@
         <t t-call="web.external_layout">
             <!-- Verificar que 'o' no sea None -->
             <t t-if="o">
-                <div class="page">
-                    <!-- Contenido en dos columnas -->
-                    <table style="width: 100%; margin-bottom: 20px; border-collapse: collapse;">
-                        <tr>
-                            <td style="width: 50%; padding: 8px; vertical-align: top; border: 1px solid #ffffff">
-                                <p style="margin: 0; font-size: 14px; line-height: 1.6;">
-                                    <strong>Proveedor:</strong><br />
-                                    <span t-if="o.partner_id and o.partner_id.name">
-                                        <span t-field="o.partner_id.name"/>
-                                    </span>
-                                    <span t-else="">
-                                        Nombre del Proveedor
-                                    </span>
-                                </p>
-                                <p style="margin: 5px 0; font-size: 12px; color: #555; line-height: 1.4;">
-                                    <span t-if="o.partner_id and o.partner_id.street">
-                                        <div t-field="o.partner_id" t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;phone&quot;, &quot;vat&quot;], &quot;no_marker&quot;: True, &quot;phone_icons&quot;: True}"/>
-                                    </span>
-                                    <span t-else="">
-                                        Dirección del Proveedor<br />
-                                        Ciudad del Proveedor, Estado del Proveedor<br />
-                                        <strong>RFC:</strong> RFC del Proveedor
-                                    </span>
-                                </p>
-                            </td>
-                            <td style="width: 50%; padding: 8px; vertical-align: top; border: 1px solid #ffffff">
-                                <p style="margin: 0; font-size: 14px; line-height: 1.6;">
-                                    <strong>Dirección de Entrega:</strong><br />
-                                    Ciudad de entrega, Estado de Entrega<br />
-                                    <strong>#:</strong> 18 C
-                                </p>
-                            </td>
-                        </tr>
-                    </table>
-
-                    <!-- Solicitud de Presupuesto -->
-                    <div class="request-header" style="padding: 20px; margin-bottom: 35px; font-size: 18px; border-radius: 5px;">
-                        <p style="margin-bottom: 10px; font-size: 26px; font-weight: 900; color: #333333;">
-                            <t t-if="o.state in ['draft', 'sent', 'to approve']">
-                                <strong>Requisición de Presupuesto <span t-field="o.name"/></strong>
-                            </t>
-                            <t t-if="o.state in ['purchase', 'done']">
-                                <strong>Orden de Compra <span t-field="o.name"/></strong>
-                            </t>
-                            <t t-if="o.state == 'cancel'">
-                                <strong>Orden de Compra Cancelada <span t-field="o.name"/></strong>
-                            </t>
-                        </p>
-                        <p style="margin-bottom: 10px; font-size: 16px; color: #555555;">
-                            Representante del Proveedor: 
-                            <span style="font-weight: bold; color: #000000;">
-                                <span t-if="o.user_id and o.user_id.name">
-                                    <span t-field="o.user_id.name"/>
-                                </span>
-                                <span t-else="">
-                                    Nombre del Representante
-                                </span>
-                            </span>
-                        </p>
-                        <p style="margin-bottom: 0; font-size: 16px; color: #555555;">
-                            Fecha del pedido: 
-                            <span style="font-weight: bold; color: #000000;">
-                                <span t-if="o.date_order">
-                                    <span t-field="o.date_order" t-options="{&quot;widget&quot;: &quot;date&quot;, &quot;format&quot;: &quot;dd/MM/yyyy&quot;}"/>
-                                </span>
-                                <span t-else="">
-                                    Fecha del Pedido
-                                </span>
-                            </span>
-                        </p>
-                    </div>
-
-                    <!-- Detalles de la Orden de Compra -->
-                    <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
-                        <thead style="background-color: #f0f0f0;">
+                <main>
+                    <div class="page">
+                        <!-- Contenido en dos columnas -->
+                        <table style="width: 100%; margin-bottom: 20px; border-collapse: collapse;">
                             <tr>
-                                <th style="padding: 12px; border: 1px solid #ddd; text-align: left;">Descripción</th>
-                                <th style="padding: 12px; border: 1px solid #ddd; text-align: right;">Cant</th>
-                                <th style="padding: 12px; border: 1px solid #ddd; text-align: right;">Precio Unidad</th>
-                                <th style="padding: 12px; border: 1px solid #ddd; text-align: right;">Monto</th>
+                                <td style="width: 50%; padding: 8px; vertical-align: top; border: 1px solid #ffffff">
+                                    <p style="margin: 0; font-size: 14px; line-height: 1.6;">
+                                        <strong>Proveedor:</strong><br />
+                                        <span t-if="o.partner_id and o.partner_id.name">
+                                            <span t-field="o.partner_id.name"/>
+                                        </span>
+                                        <span t-else="">
+                                            Nombre del Proveedor
+                                        </span>
+                                    </p>
+                                    <p style="margin: 5px 0; font-size: 12px; color: #555; line-height: 1.4;">
+                                        <span t-if="o.partner_id and o.partner_id.street">
+                                            <div t-field="o.partner_id" t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;phone&quot;, &quot;vat&quot;], &quot;no_marker&quot;: True, &quot;phone_icons&quot;: True}"/>
+                                        </span>
+                                        <span t-else="">
+                                            Dirección del Proveedor<br />
+                                            Ciudad del Proveedor, Estado del Proveedor<br />
+                                            <strong>RFC:</strong> RFC del Proveedor
+                                        </span>
+                                    </p>
+                                </td>
+                                <td style="width: 50%; padding: 8px; vertical-align: top; border: 1px solid #ffffff">
+                                    <p style="margin: 0; font-size: 14px; line-height: 1.6;">
+                                        <strong>Dirección de Entrega:</strong><br />
+                                        Ciudad de entrega, Estado de Entrega<br />
+                                        <strong>#:</strong> 18 C
+                                    </p>
+                                </td>
                             </tr>
-                        </thead>
-                        <tbody>
-                            <t t-foreach="o.order_line" t-as="line">
+                        </table>
+
+                        <!-- Solicitud de Presupuesto -->
+                        <div class="request-header" style="padding: 20px; margin-bottom: 35px; font-size: 18px; border-radius: 5px;">
+                            <p style="margin-bottom: 10px; font-size: 26px; font-weight: 900; color: #333333;">
+                                <t t-if="o.state in ['draft', 'sent', 'to approve']">
+                                    <strong>Requisición de Presupuesto <span t-field="o.name"/></strong>
+                                </t>
+                                <t t-if="o.state in ['purchase', 'done']">
+                                    <strong>Orden de Compra <span t-field="o.name"/></strong>
+                                </t>
+                                <t t-if="o.state == 'cancel'">
+                                    <strong>Orden de Compra Cancelada <span t-field="o.name"/></strong>
+                                </t>
+                            </p>
+                            <p style="margin-bottom: 10px; font-size: 16px; color: #555555;">
+                                Representante del Proveedor: 
+                                <span style="font-weight: bold; color: #000000;">
+                                    <span t-if="o.user_id and o.user_id.name">
+                                        <span t-field="o.user_id.name"/>
+                                    </span>
+                                    <span t-else="">
+                                        Nombre del Representante
+                                    </span>
+                                </span>
+                            </p>
+                            <p style="margin-bottom: 0; font-size: 16px; color: #555555;">
+                                Fecha del pedido: 
+                                <span style="font-weight: bold; color: #000000;">
+                                    <span t-if="o.date_order">
+                                        <span t-field="o.date_order" t-options="{&quot;widget&quot;: &quot;date&quot;, &quot;format&quot;: &quot;dd/MM/yyyy&quot;}"/>
+                                    </span>
+                                    <span t-else="">
+                                        Fecha del Pedido
+                                    </span>
+                                </span>
+                            </p>
+                        </div>
+
+                        <!-- Detalles de la Orden de Compra -->
+                        <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+                            <thead style="background-color: #f0f0f0;">
+                                <tr>
+                                    <th style="padding: 12px; border: 1px solid #ddd; text-align: left;">Descripción</th>
+                                    <th style="padding: 12px; border: 1px solid #ddd; text-align: right;">Cant</th>
+                                    <th style="padding: 12px; border: 1px solid #ddd; text-align: right;">Precio Unidad</th>
+                                    <th style="padding: 12px; border: 1px solid #ddd; text-align: right;">Monto</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="o.order_line" t-as="line">
+                                    <tr>
+                                        <td style="padding: 10px; border: 1px solid #ddd;">
+                                            <span t-if="line.name">
+                                                <span t-field="line.name"/>
+                                            </span>
+                                            <span t-else="">
+                                                Descripción del Producto
+                                            </span>
+                                        </td>
+                                        <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">
+                                            <span t-if="line.product_qty">
+                                                <span t-field="line.product_qty"/>
+                                            </span>
+                                            <span t-else="">
+                                                0
+                                            </span>
+                                        </td>
+                                        <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">
+                                            <span t-if="line.price_unit">
+                                                <span t-field="line.price_unit"/>
+                                            </span>
+                                            <span t-else="">
+                                                0.00
+                                            </span>
+                                        </td>
+                                        <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">
+                                            <span t-if="line.price_subtotal">
+                                                <span t-field="line.price_subtotal" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: o.currency_id}"/>
+                                            </span>
+                                            <span t-else="">
+                                                0.00
+                                            </span>
+                                        </td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+
+                        <!-- Totales -->
+                        <table class="subtotal-section" style="width: 60%; border-collapse: collapse; margin-top: 30px; margin-left: auto; font-size: 16px;">
+                            <tbody>
                                 <tr>
                                     <td style="padding: 10px; border: 1px solid #ddd;">
-                                        <span t-if="line.name">
-                                            <span t-field="line.name"/>
-                                        </span>
-                                        <span t-else="">
-                                            Descripción del Producto
-                                        </span>
+                                        <strong>Subtotal:</strong>
                                     </td>
-                                    <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">
-                                        <span t-if="line.product_qty">
-                                            <span t-field="line.product_qty"/>
-                                        </span>
-                                        <span t-else="">
-                                            0
-                                        </span>
-                                    </td>
-                                    <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">
-                                        <span t-if="line.price_unit">
-                                            <span t-field="line.price_unit"/>
-                                        </span>
-                                        <span t-else="">
-                                            0.00
-                                        </span>
-                                    </td>
-                                    <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">
-                                        <span t-if="line.price_subtotal">
-                                            <span t-field="line.price_subtotal" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: o.currency_id}"/>
+                                    <td class="text-right" style="padding: 10px; border: 1px solid #ddd;">
+                                        <span t-if="o.amount_untaxed">
+                                            <span t-field="o.amount_untaxed" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: o.currency_id}"/>
                                         </span>
                                         <span t-else="">
                                             0.00
                                         </span>
                                     </td>
                                 </tr>
-                            </t>
-                        </tbody>
-                    </table>
-
-                    <!-- Totales -->
-                    <table class="subtotal-section" style="width: 60%; border-collapse: collapse; margin-top: 30px; margin-left: auto; font-size: 16px;">
-                        <tbody>
-                            <tr>
-                                <td style="padding: 10px; border: 1px solid #ddd;">
-                                    <strong>Subtotal:</strong>
-                                </td>
-                                <td class="text-right" style="padding: 10px; border: 1px solid #ddd;">
-                                    <span t-if="o.amount_untaxed">
-                                        <span t-field="o.amount_untaxed" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: o.currency_id}"/>
-                                    </span>
-                                    <span t-else="">
-                                        0.00
-                                    </span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="padding: 10px; border: 1px solid #ddd;">
-                                    <strong>Impuestos (16%):</strong>
-                                </td>
-                                <td class="text-right" style="padding: 10px; border: 1px solid #ddd;">
-                                    <span t-if="o.amount_tax">
-                                        <span t-field="o.amount_tax" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: o.currency_id}"/>
-                                    </span>
-                                    <span t-else="">
-                                        0.00
-                                    </span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="padding: 10px; border: 1px solid #ddd;">
-                                    <strong>Total:</strong>
-                                </td>
-                                <td class="text-right" style="padding: 10px; border: 1px solid #ddd;">
-                                    <strong>
-                                        <span t-if="o.amount_total">
-                                            <span t-field="o.amount_total" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: o.currency_id}"/>
+                                <tr>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">
+                                        <strong>Impuestos (16%):</strong>
+                                    </td>
+                                    <td class="text-right" style="padding: 10px; border: 1px solid #ddd;">
+                                        <span t-if="o.amount_tax">
+                                            <span t-field="o.amount_tax" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: o.currency_id}"/>
                                         </span>
                                         <span t-else="">
                                             0.00
                                         </span>
-                                    </strong>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">
+                                        <strong>Total:</strong>
+                                    </td>
+                                    <td class="text-right" style="padding: 10px; border: 1px solid #ddd;">
+                                        <strong>
+                                            <span t-if="o.amount_total">
+                                                <span t-field="o.amount_total" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: o.currency_id}"/>
+                                            </span>
+                                            <span t-else="">
+                                                0.00
+                                            </span>
+                                        </strong>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </main>
             </t>
             <!-- Manejo del caso en que 'o' sea None -->
             <t t-else="">
-                <p>Error: No se pudo cargar la orden de compra.</p>
+                <main>
+                    <p>Error: No se pudo cargar la orden de compra.</p>
+                </main>
             </t>
         </t>
     </template>
