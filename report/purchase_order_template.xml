@@ -90,16 +90,36 @@
                                 <t t-foreach="doc.order_line" t-as="line">
                                     <tr>
                                         <td style="padding: 10px; border: 1px solid #ddd;">
-                                            <span t-field="line.name"/>
+                                            <span t-if="line.name">
+                                                <span t-field="line.name"/>
+                                            </span>
+                                            <span t-else="">
+                                                Descripción del Producto
+                                            </span>
                                         </td>
                                         <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">
-                                            <span t-field="line.product_qty"/>
+                                            <span t-if="line.product_qty">
+                                                <span t-field="line.product_qty"/>
+                                            </span>
+                                            <span t-else="">
+                                                0
+                                            </span>
                                         </td>
                                         <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">
-                                            <span t-field="line.price_unit"/>
+                                            <span t-if="line.price_unit">
+                                                <span t-field="line.price_unit"/>
+                                            </span>
+                                            <span t-else="">
+                                                0.00
+                                            </span>
                                         </td>
                                         <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">
-                                            <span t-field="line.price_subtotal" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: doc.currency_id}"/>
+                                            <span t-if="line.price_subtotal">
+                                                <span t-field="line.price_subtotal" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: doc.currency_id}"/>
+                                            </span>
+                                            <span t-else="">
+                                                0.00
+                                            </span>
                                         </td>
                                     </tr>
                                 </t>
@@ -114,7 +134,12 @@
                                         <strong>Subtotal:</strong>
                                     </td>
                                     <td class="text-right" style="padding: 10px; border: 1px solid #ddd;">
-                                        <span t-field="doc.amount_untaxed" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: doc.currency_id}"/>
+                                        <span t-if="doc.amount_untaxed">
+                                            <span t-field="doc.amount_untaxed" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: doc.currency_id}"/>
+                                        </span>
+                                        <span t-else="">
+                                            0.00
+                                        </span>
                                     </td>
                                 </tr>
                                 <tr>
@@ -122,7 +147,12 @@
                                         <strong>Impuestos (16%):</strong>
                                     </td>
                                     <td class="text-right" style="padding: 10px; border: 1px solid #ddd;">
-                                        <span t-field="doc.amount_tax" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: doc.currency_id}"/>
+                                        <span t-if="doc.amount_tax">
+                                            <span t-field="doc.amount_tax" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: doc.currency_id}"/>
+                                        </span>
+                                        <span t-else="">
+                                            0.00
+                                        </span>
                                     </td>
                                 </tr>
                                 <tr>
@@ -131,7 +161,12 @@
                                     </td>
                                     <td class="text-right" style="padding: 10px; border: 1px solid #ddd;">
                                         <strong>
-                                            <span t-field="doc.amount_total" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: doc.currency_id}"/>
+                                            <span t-if="doc.amount_total">
+                                                <span t-field="doc.amount_total" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: doc.currency_id}"/>
+                                            </span>
+                                            <span t-else="">
+                                                0.00
+                                            </span>
                                         </strong>
                                     </td>
                                 </tr>
