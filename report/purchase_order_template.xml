@@ -9,20 +9,19 @@
                         <table style="width: 100%; margin-bottom: 20px; border-collapse: collapse;">
                             <tr>
                                 <td style="width: 50%; padding: 8px; vertical-align: top; border: 1px solid #ffffff">
-                                    <p style="margin: 0; font-size: 14px; line-height: 1.6;">
-                                        <strong>Proveedor:</strong><br />
-                                        <span t-field="o.partner_id.name"/>
+                                    <p style="margin: 0; font-size: 16px; line-height: 1.6;">
+                                        <strong style="margin: 0; font-size: 16px; ">Proveedor:</strong><br />
+                                        <span style="margin: 0; font-size: " t-field="o.partner_id.name"/>
                                     </p>
                                     <p style="margin: 5px 0; font-size: 12px; color: #555; line-height: 1.4;">
                                         <div t-field="o.partner_id" 
-                                            t-tag="strong"
                                             t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;phone&quot;, &quot;vat&quot;], 
                                                         &quot;no_marker&quot;: True, &quot;phone_icons&quot;: True}"/>
                                     </p>
 
                                 </td>
                                 <td style="width: 50%; padding: 8px; vertical-align: top; border: 1px solid #ffffff">
-                                   <p style="margin: 0; font-size: 14px; line-height: 1.4;">
+                                   <p style="margin: 0; font-size: 16px; line-height: 1.4;">
                                         <strong>Dirección de Entrega:</strong><br />
                                         <strong style="display: block; margin: 0, 0, 5px, 0;">Hexágonos Mexicanos S.A. de C.V.</strong>
                                         <span t-esc="o.custom_delivery_address" style="display: block; margin: 0;"/>
