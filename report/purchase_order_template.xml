@@ -24,7 +24,7 @@
                                 <td style="width: 50%; padding: 8px; vertical-align: top; border: 1px solid #ffffff">
                                    <p style="margin: 0; font-size: 14px; line-height: 1.4;">
                                         <strong>Dirección de Entrega:</strong><br />
-                                        <strong style="display: block; margin: 0, 0, 5px, 0;">HEXÁGONOS MEXICANOS</strong>
+                                        <strong style="display: block; margin: 0, 0, 5px, 0;">Hexágonos Mexicanos S.A. de C.V.</strong>
                                         <span t-esc="o.custom_delivery_address" style="display: block; margin: 0;"/>
                                         <span style="display: block; margin: 0; padding-top: 5px; font-size: 14px;">
                                             <i class="fa fa-phone" style="margin-right: 5px;"></i>( 811 )-189-18-19
