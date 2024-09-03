@@ -63,6 +63,7 @@
                                     <th style="padding: 12px; border: 1px solid #ddd; text-align: left;">Descripción</th>
                                     <th style="padding: 12px; border: 1px solid #ddd; text-align: right;">Cant</th>
                                     <th style="padding: 12px; border: 1px solid #ddd; text-align: right;">Precio Unidad</th>
+                                    <th style="padding: 12px; border: 1px solid #ddd; text-align: right;">Impuestos</th>
                                     <th style="padding: 12px; border: 1px solid #ddd; text-align: right;">Monto</th>
                                 </tr>
                             </thead>
@@ -77,6 +78,10 @@
                                         </td>
                                         <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">
                                             <span t-field="line.price_unit"/>
+                                        </td>
+                                        <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">
+                                            <span t-field="line.price_tax" 
+                                                  t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: o.currency_id}"/>
                                         </td>
                                         <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">
                                             <span t-field="line.price_subtotal" 
