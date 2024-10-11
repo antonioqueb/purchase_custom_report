@@ -110,6 +110,9 @@
                                     <td class="text-right" style="padding: 10px; border: 1px solid #ddd;">
                                         <span t-field="o.amount_untaxed"
                                               t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
+                                                <span style="font-weight: bold;">
+                                            <t t-esc="o.currency_id.name"/> 
+                                        </span> 
                                     </td>
                                 </tr>
                                 <tr>
@@ -119,6 +122,9 @@
                                     <td class="text-right" style="padding: 10px; border: 1px solid #ddd;">
                                         <span t-field="o.amount_tax"
                                               t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
+                                                <span style="font-weight: bold; ">
+                                            <t t-esc="o.currency_id.name"/> 
+                                        </span>
                                     </td>
                                 </tr>
                                 <tr>
