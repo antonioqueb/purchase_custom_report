@@ -19,5 +19,6 @@ class PurchaseOrderReport(models.AbstractModel):
             'doc_model': 'purchase.order',
             'docs': docs,
             'currency_id': docs.currency_id,
+            'formatLang': self.env['ir.qweb'].formatLang,
         }
 
