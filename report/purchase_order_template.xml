@@ -3,8 +3,6 @@
         <t t-call="web.external_layout">
             <!-- Iterar sobre los documentos de la orden de compra -->
             <t t-foreach="docs" t-as="o">
-                <!-- Definir variable para el código de la divisa -->
-                <t t-set="currency_code" t-value="o.currency_id.name or ''"/>
                 <main>
                     <div class="page">
                         <!-- Contenido en dos columnas -->
@@ -59,13 +57,8 @@
                                     <span t-field="o.date_order" t-options="{'widget': 'date', 'format': 'dd/MM/yyyy'}"/>
                                 </span>
                             </p>
-                            <!-- Información de la Divisa -->
-                            <p style="margin-bottom: 0; font-size: 16px; color: #555555;">
-                                Divisa:
-                                <span style="font-weight: bold; color: #000000;">
-                                    <t t-esc="currency_code"/>
-                                </span>
-                            </p>
+                            <p>Divisa: <t t-esc="o.currency_id.name"/> </p>
+
                         </div>
 
                         <!-- Detalles de la Orden de Compra -->
@@ -88,23 +81,17 @@
                                         <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">
                                             <span t-field="line.product_qty"/>
                                         </td>
-                                        <!-- Precio Unidad -->
                                         <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">
-                                            <span>
-                                                <t t-esc="formatLang(line.price_unit, digits=2)"/> <t t-esc="currency_code"/>
-                                            </span>
+                                            <!-- Aplicar el widget 'monetary' y especificar 'display_currency' -->
+                                            <span t-field="line.price_unit" t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
                                         </td>
-                                        <!-- Impuestos -->
                                         <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">
-                                            <span>
-                                                <t t-esc="formatLang(line.price_tax, digits=2)"/> <t t-esc="currency_code"/>
-                                            </span>
+                                            <span t-field="line.price_tax"
+                                                  t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
                                         </td>
-                                        <!-- Monto -->
                                         <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">
-                                            <span>
-                                                <t t-esc="formatLang(line.price_subtotal, digits=2)"/> <t t-esc="currency_code"/>
-                                            </span>
+                                            <span t-field="line.price_subtotal"
+                                                  t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
                                         </td>
                                     </tr>
                                 </t>
@@ -119,9 +106,8 @@
                                         <strong>Subtotal:</strong>
                                     </td>
                                     <td class="text-right" style="padding: 10px; border: 1px solid #ddd;">
-                                        <span>
-                                            <t t-esc="formatLang(o.amount_untaxed, digits=2)"/> <t t-esc="currency_code"/>
-                                        </span>
+                                        <span t-field="o.amount_untaxed"
+                                              t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
                                     </td>
                                 </tr>
                                 <tr>
@@ -129,9 +115,8 @@
                                         <strong>Impuestos:</strong>
                                     </td>
                                     <td class="text-right" style="padding: 10px; border: 1px solid #ddd;">
-                                        <span>
-                                            <t t-esc="formatLang(o.amount_tax, digits=2)"/> <t t-esc="currency_code"/>
-                                        </span>
+                                        <span t-field="o.amount_tax"
+                                              t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
                                     </td>
                                 </tr>
                                 <tr>
@@ -140,10 +125,11 @@
                                     </td>
                                     <td class="text-right" style="padding: 10px; border: 1px solid #ddd;">
                                         <strong>
-                                            <span>
-                                                <t t-esc="formatLang(o.amount_total, digits=2)"/> <t t-esc="currency_code"/>
-                                            </span>
+                                            <span t-field="o.amount_total"
+                                                  t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
                                         </strong>
+                                         <br/>
+                                         <t t-esc="o.currency_id.name"/>
                                     </td>
                                 </tr>
                             </tbody>
