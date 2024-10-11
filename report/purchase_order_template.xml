@@ -10,29 +10,25 @@
                             <tr>
                                 <td style="width: 50%; padding: 8px; vertical-align: top; border: 1px solid #ffffff">
                                     <p style="margin: 0; font-size: 20px; line-height: 1.6;">
-                                        <strong style="margin: 0; font-size: 20px; ">Proveedor:</strong><br />
-                                        <strong><span style="margin: 0; font-size: 16px" t-field="o.partner_id.name"/></strong>
+                                        <strong style="margin: 0; font-size: 20px;">Proveedor:</strong><br />
+                                        <strong><span style="margin: 0; font-size: 16px;" t-field="o.partner_id.name"/></strong>
                                     </p>
                                     <p style="margin: 5px 0; font-size: 12px; color: #555; line-height: 1.4;">
-                                        <div t-field="o.partner_id" 
-                                            t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;phone&quot;, &quot;vat&quot;], 
-                                                        &quot;no_marker&quot;: True, &quot;phone_icons&quot;: True}"/>
+                                        <div t-field="o.partner_id"
+                                             t-options="{'widget': 'contact', 'fields': ['address', 'phone', 'vat'],
+                                                         'no_marker': True, 'phone_icons': True}"/>
                                     </p>
-
                                 </td>
                                 <td style="width: 50%; padding: 8px; vertical-align: top; border: 1px solid #ffffff">
-                                   <p style="margin: 0; font-size: 20px; line-height: 1.4;">
+                                    <p style="margin: 0; font-size: 20px; line-height: 1.4;">
                                         <strong style="margin: 0; font-size: 20px; line-height: 1.4;">Dirección de Entrega:</strong><br />
-                                        <strong style="display: block; margin: 0, 0, 5px, 0; font-size: 16px;">Hexágonos Mexicanos S.A. de C.V.</strong>
+                                        <strong style="display: block; margin: 0 0 5px 0; font-size: 16px;">Hexágonos Mexicanos S.A. de C.V.</strong>
                                         <span t-esc="o.custom_delivery_address" style="display: block; margin: 0; font-size: 14px;"/>
                                         <span style="display: block; margin: 0; padding-top: 5px; font-size: 16px;">
                                             <i class="fa fa-phone" style="margin-right: 5px;"></i>( 811 )-189-18-19
                                         </span>
                                     </p>
-
                                 </td>
-
-
                             </tr>
                         </table>
 
@@ -50,15 +46,15 @@
                                 </t>
                             </p>
                             <p style="margin-bottom: 3px; font-size: 16px; color: #555555;">
-                                Representante: 
+                                Representante:
                                 <span style="font-weight: bold; color: #000000;">
                                     <strong>Lic. Alejandra Aguilar</strong>
                                 </span>
                             </p>
                             <p style="margin-bottom: 0; font-size: 16px; color: #555555;">
-                                Fecha del pedido: 
+                                Fecha del pedido:
                                 <span style="font-weight: bold; color: #000000;">
-                                    <span t-field="o.date_order" t-options="{&quot;widget&quot;: &quot;date&quot;, &quot;format&quot;: &quot;dd/MM/yyyy&quot;}"/>
+                                    <span t-field="o.date_order" t-options="{'widget': 'date', 'format': 'dd/MM/yyyy'}"/>
                                 </span>
                             </p>
                         </div>
@@ -84,15 +80,16 @@
                                             <span t-field="line.product_qty"/>
                                         </td>
                                         <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">
-                                            <span t-field="line.price_unit"/>
+                                            <!-- Aplicar el widget 'monetary' y especificar 'display_currency' -->
+                                            <span t-field="line.price_unit" t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
                                         </td>
                                         <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">
-                                            <span t-field="line.price_tax" 
-                                                  t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: o.currency_id}"/>
+                                            <span t-field="line.price_tax"
+                                                  t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
                                         </td>
                                         <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">
-                                            <span t-field="line.price_subtotal" 
-                                                  t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: o.currency_id}"/>
+                                            <span t-field="line.price_subtotal"
+                                                  t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
                                         </td>
                                     </tr>
                                 </t>
@@ -107,8 +104,8 @@
                                         <strong>Subtotal:</strong>
                                     </td>
                                     <td class="text-right" style="padding: 10px; border: 1px solid #ddd;">
-                                        <span t-field="o.amount_untaxed" 
-                                              t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: o.currency_id}"/>
+                                        <span t-field="o.amount_untaxed"
+                                              t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
                                     </td>
                                 </tr>
                                 <tr>
@@ -116,8 +113,8 @@
                                         <strong>Impuestos:</strong>
                                     </td>
                                     <td class="text-right" style="padding: 10px; border: 1px solid #ddd;">
-                                        <span t-field="o.amount_tax" 
-                                              t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: o.currency_id}"/>
+                                        <span t-field="o.amount_tax"
+                                              t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
                                     </td>
                                 </tr>
                                 <tr>
@@ -126,8 +123,8 @@
                                     </td>
                                     <td class="text-right" style="padding: 10px; border: 1px solid #ddd;">
                                         <strong>
-                                            <span t-field="o.amount_total" 
-                                                  t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: o.currency_id}"/>
+                                            <span t-field="o.amount_total"
+                                                  t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
                                         </strong>
                                     </td>
                                 </tr>
