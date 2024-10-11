@@ -130,7 +130,7 @@
                                             <span t-field="o.amount_total"
                                                   t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
                                         </strong>
-                                         <span style="font-weight: bold;" class="text-primary">
+                                         <span style="font-weight: bold; color: #6F9F44;">
                                             <t t-esc="o.currency_id.name"/> 
                                         </span>
                                     </td>
