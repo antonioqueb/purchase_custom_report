@@ -57,7 +57,9 @@
                                     <span t-field="o.date_order" t-options="{'widget': 'date', 'format': 'dd/MM/yyyy'}"/>
                                 </span>
                             </p>
-                            <p>Divisa: <t t-esc="o.currency_id.name"/> </p>
+                            <p style="margin-bottom: 3px; font-size: 16px; color: #555555;">Divisa: <span style="font-weight: bold; color: #000000;">
+                                     <t t-esc="o.currency_id.name"/> 
+                                </span></p>
 
                         </div>
 
@@ -128,7 +130,9 @@
                                             <span t-field="o.amount_total"
                                                   t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
                                         </strong>
-                                         <t t-esc="o.currency_id.name"/>
+                                         <span style="font-weight: bold;" class="text-primary">
+                                            <t t-esc="o.currency_id.name"/> 
+                                        </span>
                                     </td>
                                 </tr>
                             </tbody>
