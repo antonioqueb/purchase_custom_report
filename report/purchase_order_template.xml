@@ -126,6 +126,7 @@
                                             <span t-field="o.amount_total"
                                                   t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
                                         </strong>
+                                        <t t-set="currency_symbol" t-value="o.currency_id.symbol or ''"/>
                                     </td>
                                 </tr>
                             </tbody>

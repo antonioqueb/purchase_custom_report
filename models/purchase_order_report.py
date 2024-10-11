@@ -18,5 +18,6 @@ class PurchaseOrderReport(models.AbstractModel):
             'doc_ids': docids,
             'doc_model': 'purchase.order',
             'docs': docs,
+            'currency_id': docs.currency_id,
         }
 
