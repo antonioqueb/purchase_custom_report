@@ -61,15 +61,7 @@
                                     <t t-esc="o.currency_id.name"/> 
                                 </span>
                             </p>
-                            
-                            <t t-if="o.entity_type == 'user'">
-                                <p style="margin-bottom: 3px; font-size: 16px; color: #555555;">Contacto: 
-                                    <span style="font-weight: bold; color: #000000;">
-                                        <t t-esc="o.contact_id.name"/>
-                                    </span>
-                                </p>
-                            </t>
-                          
+                      
 
                         <!-- Detalles de la Orden de Compra -->
                         <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
