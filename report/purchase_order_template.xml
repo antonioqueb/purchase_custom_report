@@ -56,10 +56,27 @@
                                     <span t-field="o.date_order" t-options="{'widget': 'date', 'format': 'dd/MM/yyyy'}"/>
                                 </span>
                             </p>
-                            <p style="margin-bottom: 3px; font-size: 16px; color: #555555;">Divisa: <span style="font-weight: bold; color: #000000;">
-                                     <t t-esc="o.currency_id.name"/> 
-                                </span></p>
+                            <p style="margin-bottom: 3px; font-size: 16px; color: #555555;">Divisa: 
+                                <span style="font-weight: bold; color: #000000;">
+                                    <t t-esc="o.currency_id.name"/> 
+                                </span>
+                            </p>
                             <!-- Nuevos campos -->
+                            <p style="margin-bottom: 3px; font-size: 16px; color: #555555;">Área: 
+                                <span style="font-weight: bold; color: #000000;">
+                                    <t t-esc="dict(o._fields['custom_area'].selection).get(o.custom_area)"/>
+                                </span>
+                            </p>
+                            <p style="margin-bottom: 3px; font-size: 16px; color: #555555;">Planta: 
+                                <span style="font-weight: bold; color: #000000;">
+                                    <t t-esc="dict(o._fields['planta'].selection).get(o.planta)"/>
+                                </span>
+                            </p>
+                            <p style="margin-bottom: 3px; font-size: 16px; color: #555555;">Tipo: 
+                                <span style="font-weight: bold; color: #000000;">
+                                    <t t-esc="dict(o._fields['tipo'].selection).get(o.tipo)"/>
+                                </span>
+                            </p>
                             <p style="margin-bottom: 3px; font-size: 16px; color: #555555;">Tipo de Entidad: 
                                 <span style="font-weight: bold; color: #000000;">
                                     <t t-esc="dict(o._fields['entity_type'].selection).get(o.entity_type)"/>
