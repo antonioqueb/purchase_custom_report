@@ -1,7 +1,6 @@
 <odoo>
     <template id="report_purchaseorder_document_custom">
         <t t-call="web.external_layout">
-            <!-- Iterar sobre los documentos de la orden de compra -->
             <t t-foreach="docs" t-as="o">
                 <main>
                     <div class="page">
@@ -60,7 +59,54 @@
                             <p style="margin-bottom: 3px; font-size: 16px; color: #555555;">Divisa: <span style="font-weight: bold; color: #000000;">
                                      <t t-esc="o.currency_id.name"/> 
                                 </span></p>
-
+                            <!-- Nuevos campos -->
+                            <p style="margin-bottom: 3px; font-size: 16px; color: #555555;">Tipo de Entidad: 
+                                <span style="font-weight: bold; color: #000000;">
+                                    <t t-esc="dict(o._fields['entity_type'].selection).get(o.entity_type)"/>
+                                </span>
+                            </p>
+                            <t t-if="o.entity_type == 'machine'">
+                                <p style="margin-bottom: 3px; font-size: 16px; color: #555555;">Máquina: 
+                                    <span style="font-weight: bold; color: #000000;">
+                                        <t t-esc="o.machine_id.name"/>
+                                    </span>
+                                </p>
+                            </t>
+                            <t t-if="o.entity_type == 'user'">
+                                <p style="margin-bottom: 3px; font-size: 16px; color: #555555;">Contacto: 
+                                    <span style="font-weight: bold; color: #000000;">
+                                        <t t-esc="o.contact_id.name"/>
+                                    </span>
+                                </p>
+                            </t>
+                            <t t-if="o.entity_type == 'event'">
+                                <p style="margin-bottom: 3px; font-size: 16px; color: #555555;">Evento: 
+                                    <span style="font-weight: bold; color: #000000;">
+                                        <t t-esc="o.event_id.name"/>
+                                    </span>
+                                </p>
+                            </t>
+                            <t t-if="o.entity_type == 'project'">
+                                <p style="margin-bottom: 3px; font-size: 16px; color: #555555;">Proyecto: 
+                                    <span style="font-weight: bold; color: #000000;">
+                                        <t t-esc="o.project_id.name"/>
+                                    </span>
+                                </p>
+                            </t>
+                            <t t-if="o.entity_type == 'task'">
+                                <p style="margin-bottom: 3px; font-size: 16px; color: #555555;">Tarea: 
+                                    <span style="font-weight: bold; color: #000000;">
+                                        <t t-esc="o.task_id.name"/>
+                                    </span>
+                                </p>
+                            </t>
+                            <t t-if="o.entity_type == 'fleet'">
+                                <p style="margin-bottom: 3px; font-size: 16px; color: #555555;">Vehículo: 
+                                    <span style="font-weight: bold; color: #000000;">
+                                        <t t-esc="o.vehicle_id.name"/>
+                                    </span>
+                                </p>
+                            </t>
                         </div>
 
                         <!-- Detalles de la Orden de Compra -->
@@ -84,7 +130,6 @@
                                             <span t-field="line.product_qty"/>
                                         </td>
                                         <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">
-                                            <!-- Aplicar el widget 'monetary' y especificar 'display_currency' -->
                                             <span t-field="line.price_unit" t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
                                         </td>
                                         <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">
@@ -110,9 +155,6 @@
                                     <td class="text-right" style="padding: 10px; border: 1px solid #ddd;">
                                         <span t-field="o.amount_untaxed"
                                               t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
-                                                <span style="font-weight: bold;">
-                                            <t t-esc="o.currency_id.name"/> 
-                                        </span> 
                                     </td>
                                 </tr>
                                 <tr>
@@ -122,9 +164,6 @@
                                     <td class="text-right" style="padding: 10px; border: 1px solid #ddd;">
                                         <span t-field="o.amount_tax"
                                               t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
-                                                <span style="font-weight: bold; ">
-                                            <t t-esc="o.currency_id.name"/> 
-                                        </span>
                                     </td>
                                 </tr>
                                 <tr>
@@ -136,9 +175,6 @@
                                             <span t-field="o.amount_total"
                                                   t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
                                         </strong>
-                                         <span style="font-weight: bold; color: #2E610A;">
-                                            <t t-esc="o.currency_id.name"/> 
-                                        </span>
                                     </td>
                                 </tr>
                             </tbody>
