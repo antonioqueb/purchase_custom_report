@@ -61,34 +61,7 @@
                                     <t t-esc="o.currency_id.name"/> 
                                 </span>
                             </p>
-                            <!-- Nuevos campos -->
-                            <p style="margin-bottom: 3px; font-size: 16px; color: #555555;">Área: 
-                                <span style="font-weight: bold; color: #000000;">
-                                    <t t-esc="dict(o._fields['custom_area'].selection).get(o.custom_area)"/>
-                                </span>
-                            </p>
-                            <p style="margin-bottom: 3px; font-size: 16px; color: #555555;">Planta: 
-                                <span style="font-weight: bold; color: #000000;">
-                                    <t t-esc="dict(o._fields['planta'].selection).get(o.planta)"/>
-                                </span>
-                            </p>
-                            <p style="margin-bottom: 3px; font-size: 16px; color: #555555;">Tipo: 
-                                <span style="font-weight: bold; color: #000000;">
-                                    <t t-esc="dict(o._fields['tipo'].selection).get(o.tipo)"/>
-                                </span>
-                            </p>
-                            <p style="margin-bottom: 3px; font-size: 16px; color: #555555;">Tipo de Entidad: 
-                                <span style="font-weight: bold; color: #000000;">
-                                    <t t-esc="dict(o._fields['entity_type'].selection).get(o.entity_type)"/>
-                                </span>
-                            </p>
-                            <t t-if="o.entity_type == 'machine'">
-                                <p style="margin-bottom: 3px; font-size: 16px; color: #555555;">Máquina: 
-                                    <span style="font-weight: bold; color: #000000;">
-                                        <t t-esc="o.machine_id.name"/>
-                                    </span>
-                                </p>
-                            </t>
+                            
                             <t t-if="o.entity_type == 'user'">
                                 <p style="margin-bottom: 3px; font-size: 16px; color: #555555;">Contacto: 
                                     <span style="font-weight: bold; color: #000000;">
@@ -96,35 +69,7 @@
                                     </span>
                                 </p>
                             </t>
-                            <t t-if="o.entity_type == 'event'">
-                                <p style="margin-bottom: 3px; font-size: 16px; color: #555555;">Evento: 
-                                    <span style="font-weight: bold; color: #000000;">
-                                        <t t-esc="o.event_id.name"/>
-                                    </span>
-                                </p>
-                            </t>
-                            <t t-if="o.entity_type == 'project'">
-                                <p style="margin-bottom: 3px; font-size: 16px; color: #555555;">Proyecto: 
-                                    <span style="font-weight: bold; color: #000000;">
-                                        <t t-esc="o.project_id.name"/>
-                                    </span>
-                                </p>
-                            </t>
-                            <t t-if="o.entity_type == 'task'">
-                                <p style="margin-bottom: 3px; font-size: 16px; color: #555555;">Tarea: 
-                                    <span style="font-weight: bold; color: #000000;">
-                                        <t t-esc="o.task_id.name"/>
-                                    </span>
-                                </p>
-                            </t>
-                            <t t-if="o.entity_type == 'fleet'">
-                                <p style="margin-bottom: 3px; font-size: 16px; color: #555555;">Vehículo: 
-                                    <span style="font-weight: bold; color: #000000;">
-                                        <t t-esc="o.vehicle_id.name"/>
-                                    </span>
-                                </p>
-                            </t>
-                        </div>
+                          
 
                         <!-- Detalles de la Orden de Compra -->
                         <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
