@@ -12,17 +12,19 @@
                                         <strong style="margin: 0; font-size: 20px;">Proveedor:</strong><br />
                                         <strong><span style="margin: 0; font-size: 16px;" t-field="o.partner_id.name"/></strong>
                                     </p>
-                                    <div t-field="o.partner_id"
-                                         t-options="{'widget': 'contact', 'fields': ['address', 'phone', 'vat'],
-                                                     'no_marker': True, 'phone_icons': True}"/>
+                                    <p style="margin: 5px 0; font-size: 12px; color: #555; line-height: 1.4;">
+                                        <div t-field="o.partner_id"
+                                             t-options="{'widget': 'contact', 'fields': ['address', 'phone', 'vat'],
+                                                         'no_marker': True, 'phone_icons': True}"/>
+                                    </p>
                                 </td>
                                 <td style="width: 50%; padding: 8px; vertical-align: top; border: 1px solid #ffffff">
                                     <p style="margin: 0; font-size: 20px; line-height: 1.4;">
-                                        <strong style="margin: 0; font-size: 20px;">Dirección de Entrega:</strong><br />
-                                        <strong>Hexágonos Mexicanos S.A. de C.V.</strong>
-                                        <span t-esc="o.custom_delivery_address" style="font-size: 14px;"/>
-                                        <span style="font-size: 16px;">
-                                            <i class="fa fa-phone"></i>( 818 )-388-61-65
+                                        <strong style="margin: 0; font-size: 20px; line-height: 1.4;">Dirección de Entrega:</strong><br />
+                                        <strong style="display: block; margin: 0 0 5px 0; font-size: 16px;">Hexágonos Mexicanos S.A. de C.V.</strong>
+                                        <span t-esc="o.custom_delivery_address" style="display: block; margin: 0; font-size: 14px;"/>
+                                        <span style="display: block; margin: 0; padding-top: 5px; font-size: 16px;">
+                                            <i class="fa fa-phone" style="margin-right: 5px;"></i>( 818 )- 388-61-65
                                         </span>
                                     </p>
                                 </td>
@@ -30,8 +32,8 @@
                         </table>
 
                         <!-- Solicitud de Presupuesto -->
-                        <div class="request-header" style="padding: 20px; margin-bottom: 35px;">
-                            <p style="font-size: 30px; font-weight: 900;">
+                        <div class="request-header" style="padding: 20px; margin-bottom: 35px; font-size: 18px; border-radius: 5px;">
+                            <p style="margin-bottom: 5px; font-size: 30px; font-weight: 900; color: #000000;">
                                 <t t-if="o.state in ['draft', 'sent', 'to approve']">
                                     <strong>Requisición de Materiales #<span t-field="o.name"/></strong>
                                 </t>
@@ -42,38 +44,53 @@
                                     <strong>Pedido de Compra Cancelado #<span t-field="o.name"/></strong>
                                 </t>
                             </p>
-                            <p>Representante: <strong>Lic. Alejandra Aguilar</strong></p>
-                            <p>Fecha del pedido: 
-                                <span t-field="o.date_order" t-options="{'widget': 'date', 'format': 'dd/MM/yyyy'}"/>
+                            <p style="margin-bottom: 3px; font-size: 16px; color: #555555;">
+                                Representante:
+                                <span style="font-weight: bold; color: #000000;">
+                                    <strong>Lic. Alejandra Aguilar</strong>
+                                </span>
                             </p>
-                            <p>Divisa: <strong><t t-esc="o.currency_id.name"/></strong></p>
-                        </div> <!-- Cerramos correctamente el div -->
+                            <p style="margin-bottom: 0; font-size: 16px; color: #555555;">
+                                Fecha del pedido:
+                                <span style="font-weight: bold; color: #000000;">
+                                    <span t-field="o.date_order" t-options="{'widget': 'date', 'format': 'dd/MM/yyyy'}"/>
+                                </span>
+                            </p>
+                            <p style="margin-bottom: 3px; font-size: 16px; color: #555555;">Divisa: 
+                                <span style="font-weight: bold; color: #000000;">
+                                    <t t-esc="o.currency_id.name"/> 
+                                </span>
+                            </p>
+                        </div>
 
                         <!-- Detalles de la Orden de Compra -->
                         <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
-                            <thead>
+                            <thead style="background-color: #f0f0f0;">
                                 <tr>
-                                    <th>Descripción</th>
-                                    <th>Cant</th>
-                                    <th>Precio Unidad</th>
-                                    <th>Impuestos</th>
-                                    <th>Monto</th>
+                                    <th style="padding: 12px; border: 1px solid #ddd; text-align: left;">Descripción</th>
+                                    <th style="padding: 12px; border: 1px solid #ddd; text-align: right;">Cant</th>
+                                    <th style="padding: 12px; border: 1px solid #ddd; text-align: right;">Precio Unidad</th>
+                                    <th style="padding: 12px; border: 1px solid #ddd; text-align: right;">Impuestos</th>
+                                    <th style="padding: 12px; border: 1px solid #ddd; text-align: right;">Monto</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <t t-foreach="o.order_line" t-as="line">
                                     <tr>
-                                        <td><span t-field="line.name"/></td>
-                                        <td><span t-field="line.product_qty"/></td>
-                                        <td>
-                                            <span t-field="line.price_unit"
-                                                  t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
+                                        <td style="padding: 10px; border: 1px solid #ddd;">
+                                            <span t-field="line.name"/>
                                         </td>
-                                        <td>
+                                        <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">
+                                            <span t-field="line.product_qty"/>
+                                        </td>
+                                        <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">
+                                            <span t-field="line.price_unit" t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
+                                        </td>
+                                        <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">
                                             <span t-field="line.price_tax"
                                                   t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
                                         </td>
-                                        <td>
+                                        <td style="padding: 10px; border: 1px solid #ddd; text-align: right;">
                                             <span t-field="line.price_subtotal"
                                                   t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
                                         </td>
@@ -83,32 +100,40 @@
                         </table>
 
                         <!-- Totales -->
-                        <table style="width: 45%; margin-top: 30px; margin-left: auto;">
+                        <table class="subtotal-section" style="width: 45%; border-collapse: collapse; margin-top: 30px; margin-left: auto; font-size: 16px;">
                             <tbody>
                                 <tr>
-                                    <td><strong>Subtotal:</strong></td>
-                                    <td>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">
+                                        <strong>Subtotal:</strong>
+                                    </td>
+                                    <td class="text-right" style="padding: 10px; border: 1px solid #ddd;">
                                         <span t-field="o.amount_untaxed"
                                               t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Impuestos:</strong></td>
-                                    <td>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">
+                                        <strong>Impuestos:</strong>
+                                    </td>
+                                    <td class="text-right" style="padding: 10px; border: 1px solid #ddd;">
                                         <span t-field="o.amount_tax"
                                               t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Total:</strong></td>
-                                    <td>
-                                        <span t-field="o.amount_total"
-                                              t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
+                                    <td style="padding: 10px; border: 1px solid #ddd;">
+                                        <strong>Total:</strong>
+                                    </td>
+                                    <td class="text-right" style="padding: 10px; border: 1px solid #ddd;">
+                                        <strong>
+                                            <span t-field="o.amount_total"
+                                                  t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
+                                        </strong>
                                     </td>
                                 </tr>
                             </tbody>
                         </table>
-                    </div> <!-- Cerramos correctamente el div -->
+                    </div>
                 </main>
             </t>
         </t>
