@@ -61,6 +61,11 @@
                                     <t t-esc="o.currency_id.name"/> 
                                 </span>
                             </p>
+                            <p style="margin-bottom: 3px; font-size: 16px; color: #555555;">Método de Pago: 
+                                <span style="font-weight: bold; color: #000000;">
+                                    <t t-esc="dict(o._fields['metodo_pago'].selection).get(o.metodo_pago) or 'No especificado'"/>
+                                </span>
+                            </p>
                             <p style="margin-bottom: 3px; font-size: 16px; color: #555555;">
                                 <strong>HORARIOS Y DÍAS DE RECIBO:</strong> LUNES A VIERNES DE 7:00AM A 3:00PM
                             </p>
